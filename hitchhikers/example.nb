@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    815307,      48226]
-NotebookOptionsPosition[    810021,      48063]
-NotebookOutlinePosition[    810934,      48094]
-CellTagsIndexPosition[    810758,      48087]
+NotebookDataLength[    815300,      48227]
+NotebookOptionsPosition[    810014,      48064]
+NotebookOutlinePosition[    810927,      48095]
+CellTagsIndexPosition[    810751,      48088]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,9 +33,10 @@ Cell[BoxData[
    RowBox[{"Append", "[", 
     RowBox[{
     "$Path", ",", " ", 
-     "\"\<C:\\\\Users\\\\Claire\\\\Dropbox\\\\MEME\\\\Montpellier\\\\\
-AdaptiveDynamicsStratification\\\\hitchhikers\>\""}], "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.7088305930535555`*^9, 3.708830611728794*^9}}],
+     "\"\<C:\\\\Users\\\\Claire\\\\Documents\\\\GitHub\\\\HumanEvol\\\\\
+hitchhikers\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7088305930535555`*^9, 3.708830611728794*^9}, 
+   3.70998710136491*^9}],
 
 Cell[CellGroupData[{
 
@@ -48074,21 +48075,21 @@ StyleDefinitions->"Default.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "Info3349695984-3912122"->{
-  Cell[5575, 160, 127, 2, 22, "Print",
+  Cell[5568, 161, 127, 2, 22, "Print",
    CellTags->"Info3349695984-3912122"]},
  "Info3349695990-2533428"->{
-  Cell[80997, 4864, 151, 2, 22, "Print",
+  Cell[80990, 4865, 151, 2, 22, "Print",
    CellTags->"Info3349695990-2533428"]},
  "Info3346768763-2200055"->{
-  Cell[382513, 23253, 178, 2, 22, "Print",
+  Cell[382506, 23254, 178, 2, 22, "Print",
    CellTags->"Info3346768763-2200055"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info3349695984-3912122", 810431, 48075},
- {"Info3349695990-2533428", 810540, 48078},
- {"Info3346768763-2200055", 810651, 48081}
+ {"Info3349695984-3912122", 810424, 48076},
+ {"Info3349695990-2533428", 810533, 48079},
+ {"Info3346768763-2200055", 810644, 48082}
  }
 *)
 (*NotebookFileOutline
@@ -48097,135 +48098,135 @@ Cell[CellGroupData[{
 Cell[580, 22, 64, 0, 70, "Section"],
 Cell[647, 24, 52, 1, 30, "Input"],
 Cell[702, 27, 54, 0, 30, "Text"],
-Cell[759, 29, 341, 8, 33, "Input"],
+Cell[759, 29, 334, 9, 33, "Input"],
 Cell[CellGroupData[{
-Cell[1125, 41, 97, 1, 30, "Input"],
-Cell[1225, 44, 1772, 31, 145, "Output"]
+Cell[1118, 42, 97, 1, 30, "Input"],
+Cell[1218, 45, 1772, 31, 145, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3034, 80, 80, 1, 30, "Input"],
-Cell[3117, 83, 256, 7, 21, "Message"],
-Cell[3376, 92, 295, 7, 21, "Message"],
-Cell[3674, 101, 259, 6, 21, "Message"],
-Cell[3936, 109, 300, 7, 21, "Message"],
-Cell[4239, 118, 262, 7, 21, "Message"],
-Cell[4504, 127, 338, 7, 21, "Message"],
-Cell[4845, 136, 299, 7, 21, "Message"],
-Cell[5147, 145, 338, 7, 21, "Message"]
+Cell[3027, 81, 80, 1, 30, "Input"],
+Cell[3110, 84, 256, 7, 21, "Message"],
+Cell[3369, 93, 295, 7, 21, "Message"],
+Cell[3667, 102, 259, 6, 21, "Message"],
+Cell[3929, 110, 300, 7, 21, "Message"],
+Cell[4232, 119, 262, 7, 21, "Message"],
+Cell[4497, 128, 338, 7, 21, "Message"],
+Cell[4838, 137, 299, 7, 21, "Message"],
+Cell[5140, 146, 338, 7, 21, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5522, 157, 50, 1, 30, "Input"],
-Cell[5575, 160, 127, 2, 22, "Print",
+Cell[5515, 158, 50, 1, 30, "Input"],
+Cell[5568, 161, 127, 2, 22, "Print",
  CellTags->"Info3349695984-3912122"]
 }, Open  ]],
-Cell[5717, 165, 38, 0, 30, "Text"],
-Cell[5758, 167, 393, 13, 30, "Input"],
+Cell[5710, 166, 38, 0, 30, "Text"],
+Cell[5751, 168, 393, 13, 30, "Input"],
 Cell[CellGroupData[{
-Cell[6176, 184, 448, 14, 30, "Input"],
-Cell[6627, 200, 627, 22, 43, "Output"]
+Cell[6169, 185, 448, 14, 30, "Input"],
+Cell[6620, 201, 627, 22, 43, "Output"]
 }, Open  ]],
-Cell[7269, 225, 67, 2, 30, "Input"],
+Cell[7262, 226, 67, 2, 30, "Input"],
 Cell[CellGroupData[{
-Cell[7361, 231, 161, 4, 30, "Input"],
-Cell[7525, 237, 73238, 4613, 296, 70075, 4559, "GraphicsData", "PostScript", \
+Cell[7354, 232, 161, 4, 30, "Input"],
+Cell[7518, 238, 73238, 4613, 296, 70075, 4559, "GraphicsData", "PostScript", \
 "Graphics"],
-Cell[80766, 4852, 141, 4, 30, "Output"]
+Cell[80759, 4853, 141, 4, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[80944, 4861, 50, 1, 30, "Input"],
-Cell[80997, 4864, 151, 2, 22, "Print",
+Cell[80937, 4862, 50, 1, 30, "Input"],
+Cell[80990, 4865, 151, 2, 22, "Print",
  CellTags->"Info3349695990-2533428"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[81185, 4871, 167, 4, 30, "Input"],
-Cell[81355, 4877, 74583, 4662, 296, 71284, 4606, "GraphicsData", \
+Cell[81178, 4872, 167, 4, 30, "Input"],
+Cell[81348, 4878, 74583, 4662, 296, 71284, 4606, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[155941, 9541, 134, 4, 30, "Output"]
+Cell[155934, 9542, 134, 4, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[156112, 9550, 167, 4, 30, "Input"],
-Cell[156282, 9556, 75966, 4711, 296, 72614, 4654, "GraphicsData", \
+Cell[156105, 9551, 167, 4, 30, "Input"],
+Cell[156275, 9557, 75966, 4711, 296, 72614, 4654, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[232251, 14269, 134, 4, 30, "Output"]
+Cell[232244, 14270, 134, 4, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[232422, 14278, 272, 7, 30, "Input"],
-Cell[232697, 14287, 79344, 4837, 296, 75929, 4779, "GraphicsData", \
+Cell[232415, 14279, 272, 7, 30, "Input"],
+Cell[232690, 14288, 79344, 4837, 296, 75929, 4779, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[312044, 19126, 134, 4, 30, "Output"]
+Cell[312037, 19127, 134, 4, 30, "Output"]
 }, Open  ]],
-Cell[312193, 19133, 113, 3, 30, "Text"],
+Cell[312186, 19134, 113, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[312331, 19140, 102, 2, 30, "Input"],
-Cell[312436, 19144, 21822, 1378, 296, 19542, 1339, "GraphicsData", \
+Cell[312324, 19141, 102, 2, 30, "Input"],
+Cell[312429, 19145, 21822, 1378, 296, 19542, 1339, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[334261, 20524, 141, 4, 30, "Output"]
+Cell[334254, 20525, 141, 4, 30, "Output"]
 }, Open  ]],
-Cell[334417, 20531, 216, 4, 30, "Text"],
-Cell[334636, 20537, 1635, 45, 88, "Input"],
-Cell[336274, 20584, 1429, 38, 88, "Input"],
+Cell[334410, 20532, 216, 4, 30, "Text"],
+Cell[334629, 20538, 1635, 45, 88, "Input"],
+Cell[336267, 20585, 1429, 38, 88, "Input"],
 Cell[CellGroupData[{
-Cell[337728, 20626, 185, 5, 30, "Input"],
-Cell[337916, 20633, 44273, 2602, 296, 39987, 2530, "GraphicsData", \
+Cell[337721, 20627, 185, 5, 30, "Input"],
+Cell[337909, 20634, 44273, 2602, 296, 39987, 2530, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[382192, 23237, 134, 4, 30, "Output"]
+Cell[382185, 23238, 134, 4, 30, "Output"]
 }, Open  ]],
-Cell[382341, 23244, 93, 2, 30, "Text"],
+Cell[382334, 23245, 93, 2, 30, "Text"],
 Cell[CellGroupData[{
-Cell[382459, 23250, 51, 1, 30, "Input"],
-Cell[382513, 23253, 178, 2, 22, "Print",
+Cell[382452, 23251, 51, 1, 30, "Input"],
+Cell[382506, 23254, 178, 2, 22, "Print",
  CellTags->"Info3346768763-2200055"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[382728, 23260, 440, 11, 50, "Input"],
+Cell[382721, 23261, 440, 11, 50, "Input"],
 Cell[CellGroupData[{
-Cell[383193, 23275, 45209, 2660, 296, 40833, 2586, "GraphicsData", \
+Cell[383186, 23276, 45209, 2660, 296, 40833, 2586, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[428405, 25937, 45530, 2673, 296, 41061, 2598, "GraphicsData", \
+Cell[428398, 25938, 45530, 2673, 296, 41061, 2598, "GraphicsData", \
 "PostScript", "Graphics"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[473984, 28616, 427, 12, 50, "Input"],
+Cell[473977, 28617, 427, 12, 50, "Input"],
 Cell[CellGroupData[{
-Cell[474436, 28632, 45874, 2687, 296, 41295, 2610, "GraphicsData", \
+Cell[474429, 28633, 45874, 2687, 296, 41295, 2610, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[520313, 31321, 46214, 2701, 296, 41529, 2622, "GraphicsData", \
+Cell[520306, 31322, 46214, 2701, 296, 41529, 2622, "GraphicsData", \
 "PostScript", "Graphics"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[566576, 34028, 427, 12, 50, "Input"],
+Cell[566569, 34029, 427, 12, 50, "Input"],
 Cell[CellGroupData[{
-Cell[567028, 34044, 46528, 2714, 296, 41762, 2634, "GraphicsData", \
+Cell[567021, 34045, 46528, 2714, 296, 41762, 2634, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[613559, 36760, 46826, 2727, 296, 41995, 2646, "GraphicsData", \
+Cell[613552, 36761, 46826, 2727, 296, 41995, 2646, "GraphicsData", \
 "PostScript", "Graphics"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[660434, 39493, 448, 11, 50, "Input"],
+Cell[660427, 39494, 448, 11, 50, "Input"],
 Cell[CellGroupData[{
-Cell[660907, 39508, 47615, 2765, 296, 42694, 2682, "GraphicsData", \
+Cell[660900, 39509, 47615, 2765, 296, 42694, 2682, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[708525, 42275, 47925, 2778, 296, 42927, 2694, "GraphicsData", \
+Cell[708518, 42276, 47925, 2778, 296, 42927, 2694, "GraphicsData", \
 "PostScript", "Graphics"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[756499, 45059, 327, 9, 30, "Input"],
-Cell[756829, 45070, 52462, 2958, 296, 47612, 2877, "GraphicsData", \
+Cell[756492, 45060, 327, 9, 30, "Input"],
+Cell[756822, 45071, 52462, 2958, 296, 47612, 2877, "GraphicsData", \
 "PostScript", "Graphics"],
-Cell[809294, 48030, 134, 4, 30, "Output"]
+Cell[809287, 48031, 134, 4, 30, "Output"]
 }, Open  ]],
-Cell[809443, 48037, 174, 5, 30, "Input"],
+Cell[809436, 48038, 174, 5, 30, "Input"],
 Cell[CellGroupData[{
-Cell[809642, 48046, 108, 2, 30, "Input"],
-Cell[809753, 48050, 46, 0, 30, "Output"]
+Cell[809635, 48047, 108, 2, 30, "Input"],
+Cell[809746, 48051, 46, 0, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[809836, 48055, 108, 2, 30, "Input"],
-Cell[809947, 48059, 46, 0, 30, "Output"]
+Cell[809829, 48056, 108, 2, 30, "Input"],
+Cell[809940, 48060, 46, 0, 30, "Output"]
 }, Open  ]]
 }, Open  ]]
 }

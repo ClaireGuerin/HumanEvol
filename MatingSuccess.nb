@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1694765,      30174]
-NotebookOptionsPosition[   1686820,      29920]
-NotebookOutlinePosition[   1687167,      29935]
-CellTagsIndexPosition[   1687124,      29932]
+NotebookDataLength[   1702513,      30335]
+NotebookOptionsPosition[   1694482,      30079]
+NotebookOutlinePosition[   1694829,      30094]
+CellTagsIndexPosition[   1694786,      30091]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -4165,34 +4165,28 @@ Cell[BoxData[{
        RowBox[{"1", "-", 
         RowBox[{"s", "*", "lf"}]}], ")"}]}]}]}], ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"female", " ", "reproductive", " ", "factor", " ", 
+   RowBox[{"female", " ", "\"\<reproductive factor\>\"", " ", 
     RowBox[{"(", "?", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{"rm", "=", 
-    RowBox[{"s", "*", "e", "*", 
-     RowBox[{"lm", "/", 
-      RowBox[{"(", 
-       RowBox[{"1", "-", 
-        RowBox[{"s", "*", "lm"}]}], ")"}]}]}]}], ";"}], " ", 
+  RowBox[{"rm", "=", 
+   RowBox[{"s", "*", "e", "*", 
+    RowBox[{"lm", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{"s", "*", "lm"}]}], ")"}]}]}]}], ";", " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"male", " ", "reproductive", " ", "factor", " ", 
-    RowBox[{"(", "?", ")"}]}], "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"a", "=", "0.25"}], ";"}], " ", 
+   RowBox[{"male", " ", "\"\<reproductive factor\>\"", " ", 
+    RowBox[{"(", "?", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"a", "=", "0.25"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "proportion", " ", "of", " ", "attractive", " ", "females", " ", "in", " ",
-     "the", " ", "population"}], " ", "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"s", "=", "0.8"}], ";"}], " ", 
+     "the", " ", "population"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"s", "=", "0.8"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{"survival", " ", 
     RowBox[{"probability", ".", " ", "We"}], " ", "assume", " ", "no", " ", 
-    "senescence"}], " ", "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
+    "senescence"}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{"e", "=", "0.6"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
@@ -4254,7 +4248,7 @@ Cell[BoxData[{
      RowBox[{"with", " ", "dr"}], ",", " ", 
      RowBox[{
      "the", " ", "availability", " ", "probability", " ", "d", " ", "of", " ",
-       "the", " ", "resident", " ", "m", " ", "r"}]}], "*)"}]}]}]}], "Input",
+       "the", " ", "resident", " ", "r"}]}], "*)"}]}]}]}], "Input",
  CellChangeTimes->{{3.709716900491398*^9, 3.7097169232867107`*^9}, {
    3.7097169562325306`*^9, 3.709717010867549*^9}, {3.709870108238134*^9, 
    3.7098701609112434`*^9}, {3.709892058033371*^9, 3.709892062006567*^9}, {
@@ -4264,7 +4258,7 @@ Cell[BoxData[{
    3.7099605385104747`*^9}, {3.709960587111421*^9, 3.709960793908558*^9}, 
    3.709960839991858*^9, {3.7099609249188013`*^9, 3.709960930551882*^9}, {
    3.7099616333134584`*^9, 3.7099616471892433`*^9}, {3.709962709600875*^9, 
-   3.7099627193403873`*^9}}],
+   3.7099627193403873`*^9}, {3.7099896893259525`*^9, 3.7099897119966946`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -4561,7 +4555,7 @@ Cell[BoxData[
  CellChangeTimes->{3.709892250937398*^9, 3.7098925296620455`*^9, 
   3.7098926008759*^9, 3.7098926602007575`*^9, 3.7099023708464975`*^9, 
   3.709902906447936*^9, 3.709958389641471*^9, 3.70996090679819*^9, 
-  3.709962417569556*^9}]
+  3.709962417569556*^9, 3.7099885667435584`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -4621,23 +4615,24 @@ Cell[BoxData[{
    "availability", " ", "d", " ", "of", " ", "non", " ", "attractive", " ", 
     "female", " ", "na"}], " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"dm", "=", 
-   RowBox[{"1", "/", 
-    RowBox[{"(", 
-     RowBox[{"1", "+", 
-      RowBox[{"s", "*", "e", "*", "lm", "*", 
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{
-          RowBox[{"a", "*", "da"}], "+", 
+  RowBox[{
+   RowBox[{"dm", "=", 
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"s", "*", "e", "*", "lm", "*", 
+        RowBox[{
+         RowBox[{"(", 
           RowBox[{
-           RowBox[{"(", 
-            RowBox[{"1", "-", "a"}], ")"}], "*", "dna", "*", 
-           RowBox[{"(", 
-            RowBox[{"1", "-", "phi"}], ")"}]}]}], ")"}], "/", 
-        RowBox[{"(", 
-         RowBox[{"1", "-", 
-          RowBox[{"s", "*", "lm"}]}], ")"}]}]}]}], ")"}]}]}], ";", " ", 
+           RowBox[{"a", "*", "da"}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "a"}], ")"}], "*", "dna", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "phi"}], ")"}]}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{"s", "*", "lm"}]}], ")"}]}]}]}], ")"}]}]}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "availability", " ", "d", " ", "of", " ", "mutant", " ", "male", " ", 
@@ -4713,14 +4708,20 @@ Cell[BoxData[
           RowBox[{"g", "[", "phip", "]"}], "*", "dr", "*", "s", "*", "e", "*", 
           RowBox[{"m", "[", "phip", "]"}]}]}], ")"}]}], "/.", 
       RowBox[{"eq", "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "]"}]}], ";"}]], "Input",
+       RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "]"}]}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "delta", " ", "in", " ", "fecundity", " ", "of", " ", "between", " ", 
+    "mutant", " ", "and", " ", "resident", " ", "strategies"}], " ", 
+   "*)"}]}]], "Input",
  CellChangeTimes->{{3.709959608456777*^9, 3.7099597147099695`*^9}, {
   3.709959789127613*^9, 3.7099598103518934`*^9}, {3.7099598621986933`*^9, 
   3.7099598665981054`*^9}, {3.7099598997318497`*^9, 3.709959912598936*^9}, {
   3.709959946577282*^9, 3.709959988713724*^9}, {3.7099600192035894`*^9, 
   3.7099602214553685`*^9}, {3.709961399747985*^9, 3.709961509128874*^9}, {
   3.7099618247843833`*^9, 3.7099618378445396`*^9}, {3.7099619753191257`*^9, 
-  3.70996197875793*^9}}],
+  3.70996197875793*^9}, {3.709989749765215*^9, 3.709989769839797*^9}, {
+  3.709989848624513*^9, 3.7099898655089593`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -4736,100 +4737,110 @@ Cell[BoxData[
  RowBox[{"-", "3.3395508580724713`*^-12"}]], "Output",
  CellChangeTimes->{
   3.7099602548536453`*^9, {3.709960318410161*^9, 3.7099603473788776`*^9}, 
-   3.709961528239714*^9, 3.709961843821293*^9, 3.7099624442402935`*^9}]
+   3.709961528239714*^9, 3.709961843821293*^9, 3.7099624442402935`*^9, 
+   3.709988615670597*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
   RowBox[{"$Path", " ", "=", " ", 
    RowBox[{"Append", "[", 
     RowBox[{
     "$Path", ",", " ", 
-     "\"\<C:\\\\Users\\\\Claire\\\\Dropbox\\\\MEME\\\\Montpellier\\\\\
-AdaptiveDynamicsStratification\\\\hitchhikers\>\""}], "]"}]}], ";", 
-  RowBox[{"Get", "[", "\"\<AdaptiveDynamics`\>\"", "]"}]}]], "Input",
- CellChangeTimes->{{3.7098703117936544`*^9, 3.709870393650419*^9}}],
+     "\"\<C:\\\\Users\\\\Claire\\\\Documents\\\\GitHub\\\\HumanEvol\\\\\
+hitchhikers\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<AdaptiveDynamics`\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.7098703117936544`*^9, 3.709870393650419*^9}, {
+  3.709987082569468*^9, 3.709987086710191*^9}}],
 
 Cell[BoxData[
  TemplateBox[{
   "Get","noopen",
    "\"Cannot open \
-\\!\\(\\*RowBox[{\\\"\\\\\\\"Graphics`Arrow`\\\\\\\"\\\"}]\\).\"",2,20,13,
-   26872415807517839992,"Local"},
+\\!\\(\\*RowBox[{\\\"\\\\\\\"Graphics`Arrow`\\\\\\\"\\\"}]\\).\"",2,18,1,
+   26872582714359487564,"Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.7099584225333405`*^9, 3.70996036074076*^9, 
-  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9}],
+  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9, 
+  3.709988619881718*^9}],
 
 Cell[BoxData[
  TemplateBox[{
   "Needs","nocont",
    "\"Context \\!\\(\\*RowBox[{\\\"\\\\\\\"Graphics`Arrow`\\\\\\\"\\\"}]\\) \
-was not created when Needs was evaluated.\"",2,20,14,26872415807517839992,
+was not created when Needs was evaluated.\"",2,18,2,26872582714359487564,
    "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.7099584225333405`*^9, 3.70996036074076*^9, 
-  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484105253`*^9}],
+  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9, 
+  3.709988619920847*^9}],
 
 Cell[BoxData[
  TemplateBox[{
   "Get","noopen",
    "\"Cannot open \\!\\(\\*RowBox[{\\\"\\\\\\\"Graphics`ImplicitPlot`\\\\\\\"\
-\\\"}]\\).\"",2,20,15,26872415807517839992,"Local"},
+\\\"}]\\).\"",2,18,3,26872582714359487564,"Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.7099584225333405`*^9, 3.70996036074076*^9, 
-  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484140224`*^9}],
+  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9, 
+  3.709988619940404*^9}],
 
 Cell[BoxData[
  TemplateBox[{
   "Needs","nocont",
    "\"Context \
 \\!\\(\\*RowBox[{\\\"\\\\\\\"Graphics`ImplicitPlot`\\\\\\\"\\\"}]\\) was not \
-created when Needs was evaluated.\"",2,20,16,26872415807517839992,"Local"},
+created when Needs was evaluated.\"",2,18,4,26872582714359487564,"Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.7099584225333405`*^9, 3.70996036074076*^9, 
-  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484165325`*^9}],
+  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9, 
+  3.70998861996095*^9}],
 
 Cell[BoxData[
  TemplateBox[{
   "Get","noopen",
    "\"Cannot open \
-\\!\\(\\*RowBox[{\\\"\\\\\\\"NumericalMath`NLimit`\\\\\\\"\\\"}]\\).\"",2,20,
-   17,26872415807517839992,"Local"},
+\\!\\(\\*RowBox[{\\\"\\\\\\\"NumericalMath`NLimit`\\\\\\\"\\\"}]\\).\"",2,18,
+   5,26872582714359487564,"Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.7099584225333405`*^9, 3.70996036074076*^9, 
-  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484190397`*^9}],
+  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9, 
+  3.709988619980011*^9}],
 
 Cell[BoxData[
  TemplateBox[{
   "General","stop",
    "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Get\\\", \\\"::\\\", \\\
 \"noopen\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
-calculation.\"",2,20,18,26872415807517839992,"Local"},
+calculation.\"",2,18,6,26872582714359487564,"Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.7099584225333405`*^9, 3.70996036074076*^9, 
-  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484220467`*^9}],
+  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9, 
+  3.709988620000338*^9}],
 
 Cell[BoxData[
  TemplateBox[{
   "Needs","nocont",
    "\"Context \
 \\!\\(\\*RowBox[{\\\"\\\\\\\"NumericalMath`NLimit`\\\\\\\"\\\"}]\\) was not \
-created when Needs was evaluated.\"",2,20,19,26872415807517839992,"Local"},
+created when Needs was evaluated.\"",2,18,7,26872582714359487564,"Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.7099584225333405`*^9, 3.70996036074076*^9, 
-  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484240527`*^9}],
+  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9, 
+  3.7099886200189085`*^9}],
 
 Cell[BoxData[
  TemplateBox[{
   "General","stop",
    "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Needs\\\", \\\"::\\\", \
 \\\"nocont\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
-calculation.\"",2,20,20,26872415807517839992,"Local"},
+calculation.\"",2,18,8,26872582714359487564,"Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.7099584225333405`*^9, 3.70996036074076*^9, 
-  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484270663`*^9}]
+  3.7099618475058594`*^9, 3.7099624075643263`*^9, 3.7099624484036036`*^9, 
+  3.7099886200379477`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -28133,32 +28144,47 @@ Cell[BoxData[
  CellChangeTimes->{3.7099028602101254`*^9, 3.7099032082391376`*^9}]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{
-  RowBox[{"f", "[", 
-   RowBox[{"phip_", ",", "phi_"}], "]"}], "=", 
-  RowBox[{"Re", "[", 
-   RowBox[{"D", "[", 
-    RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"phip_", ",", "phi_"}], "]"}], "=", 
+   RowBox[{"Re", "[", 
+    RowBox[{"D", "[", 
      RowBox[{
       RowBox[{
-       RowBox[{"1", "/", 
-        RowBox[{"(", 
-         RowBox[{"1", "-", "s"}], ")"}]}], "*", 
-       RowBox[{"g", "[", "phi", "]"}], "*", "dm", "*", "s", "*", "e", "*", 
-       RowBox[{"m", "[", "phi", "]"}]}], "/.", 
-      RowBox[{"eq", "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}], ",", "phi"}], "]"}], 
-   "]"}]}]], "Input",
+       RowBox[{
+        RowBox[{"1", "/", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "s"}], ")"}]}], "*", 
+        RowBox[{"g", "[", "phi", "]"}], "*", "dm", "*", "s", "*", "e", "*", 
+        RowBox[{"m", "[", "phi", "]"}]}], "/.", 
+       RowBox[{"eq", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", "phi"}], "]"}], "]"}]}], ";", 
+  " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"dW", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"phi", ",", "phip"}], ")"}], "/", "dphi"}]}], "*)"}]}]], "Input",
  CellChangeTimes->{{3.7099037900383115`*^9, 3.7099038919353523`*^9}, {
    3.709903934328988*^9, 3.7099040208979297`*^9}, {3.7099629841464863`*^9, 
    3.7099629863368816`*^9}, {3.709963017713719*^9, 3.709963036107941*^9}, {
    3.709963825007744*^9, 3.7099639547793427`*^9}, 3.709964375482788*^9, {
    3.70996492807246*^9, 3.7099649371441603`*^9}, {3.709965096167432*^9, 
-   3.70996509817013*^9}},
+   3.70996509817013*^9}, 3.7099889466364045`*^9, {3.7099898876821356`*^9, 
+   3.7099899389301095`*^9}},
  NumberMarks->False],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"h", "[", "phi_", "]"}], "=", 
+  RowBox[{"f", "[", 
+   RowBox[{"phi", ",", "phi"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.709988952427333*^9, 3.709988972597168*^9}, {
+  3.7099893688438168`*^9, 3.7099893691624436`*^9}}],
 
 Cell[BoxData[
  RowBox[{"Re", "[", 
@@ -28180,59 +28206,52 @@ Cell[BoxData[
                 RowBox[{"95", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                   RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                 RowBox[{"54", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "18344880"}], "+", 
-                 RowBox[{"20007000", " ", "phip"}], "-", 
+                 RowBox[{"20007000", " ", "phi"}], "-", 
                  RowBox[{"13358520", " ", 
-                  SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                  SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                RowBox[{"(", 
                 RowBox[{"34992", " ", 
                  SuperscriptBox["190", 
                   RowBox[{"1", "/", "3"}]], " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                  SuperscriptBox[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                   RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-              RowBox[{
-               FractionBox["1", 
-                RowBox[{"54", " ", 
-                 SuperscriptBox["2", 
-                  RowBox[{"2", "/", "3"}]], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+              FractionBox[
                RowBox[{
                 SuperscriptBox["95", 
                  RowBox[{"1", "/", "3"}]], " ", 
@@ -28240,28 +28259,35 @@ Cell[BoxData[
                  RowBox[{"(", 
                   RowBox[{
                    RowBox[{"-", "66880"}], "+", 
-                   RowBox[{"131100", " ", "phip"}], "+", 
+                   RowBox[{"131100", " ", "phi"}], "+", 
                    RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                    RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                    RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-                 RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}], "+", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+                 RowBox[{"1", "/", "3"}]]}], 
+               RowBox[{"54", " ", 
+                SuperscriptBox["2", 
+                 RowBox[{"2", "/", "3"}]], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], 
+          ")"}]}], "+", 
         RowBox[{
          RowBox[{"(", 
           RowBox[{"0.75`", " ", 
@@ -28272,7 +28298,7 @@ Cell[BoxData[
            RowBox[{
             FractionBox["18", "95"], " ", 
             RowBox[{"(", 
-             RowBox[{"1", "-", "phip"}], ")"}], " ", 
+             RowBox[{"1", "-", "phi"}], ")"}], " ", 
             RowBox[{"(", 
              RowBox[{
               RowBox[{"-", 
@@ -28280,59 +28306,52 @@ Cell[BoxData[
                 RowBox[{"95", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                   RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                 RowBox[{"54", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "18344880"}], "+", 
-                 RowBox[{"20007000", " ", "phip"}], "-", 
+                 RowBox[{"20007000", " ", "phi"}], "-", 
                  RowBox[{"13358520", " ", 
-                  SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                  SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                RowBox[{"(", 
                 RowBox[{"34992", " ", 
                  SuperscriptBox["190", 
                   RowBox[{"1", "/", "3"}]], " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                  SuperscriptBox[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                   RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-              RowBox[{
-               FractionBox["1", 
-                RowBox[{"54", " ", 
-                 SuperscriptBox["2", 
-                  RowBox[{"2", "/", "3"}]], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+              FractionBox[
                RowBox[{
                 SuperscriptBox["95", 
                  RowBox[{"1", "/", "3"}]], " ", 
@@ -28340,29 +28359,35 @@ Cell[BoxData[
                  RowBox[{"(", 
                   RowBox[{
                    RowBox[{"-", "66880"}], "+", 
-                   RowBox[{"131100", " ", "phip"}], "+", 
+                   RowBox[{"131100", " ", "phi"}], "+", 
                    RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                    RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                    RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-                 RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}]}], ")"}], 
-      " ", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+                 RowBox[{"1", "/", "3"}]]}], 
+               RowBox[{"54", " ", 
+                SuperscriptBox["2", 
+                 RowBox[{"2", "/", "3"}]], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], 
+          ")"}]}]}], ")"}], " ", 
       RowBox[{"(", 
        RowBox[{
         RowBox[{"0.2525`", "/", 
@@ -28377,59 +28402,52 @@ Cell[BoxData[
                 RowBox[{"95", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                   RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                 RowBox[{"54", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "18344880"}], "+", 
-                 RowBox[{"20007000", " ", "phip"}], "-", 
+                 RowBox[{"20007000", " ", "phi"}], "-", 
                  RowBox[{"13358520", " ", 
-                  SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                  SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                RowBox[{"(", 
                 RowBox[{"34992", " ", 
                  SuperscriptBox["190", 
                   RowBox[{"1", "/", "3"}]], " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                  SuperscriptBox[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                   RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-              RowBox[{
-               FractionBox["1", 
-                RowBox[{"54", " ", 
-                 SuperscriptBox["2", 
-                  RowBox[{"2", "/", "3"}]], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+              FractionBox[
                RowBox[{
                 SuperscriptBox["95", 
                  RowBox[{"1", "/", "3"}]], " ", 
@@ -28437,28 +28455,35 @@ Cell[BoxData[
                  RowBox[{"(", 
                   RowBox[{
                    RowBox[{"-", "66880"}], "+", 
-                   RowBox[{"131100", " ", "phip"}], "+", 
+                   RowBox[{"131100", " ", "phi"}], "+", 
                    RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                    RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                    RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-                 RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}], "+", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+                 RowBox[{"1", "/", "3"}]]}], 
+               RowBox[{"54", " ", 
+                SuperscriptBox["2", 
+                 RowBox[{"2", "/", "3"}]], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], 
+          ")"}]}], "+", 
         RowBox[{
          RowBox[{"(", 
           RowBox[{"0.75`", " ", 
@@ -28469,7 +28494,7 @@ Cell[BoxData[
            RowBox[{
             FractionBox["18", "95"], " ", 
             RowBox[{"(", 
-             RowBox[{"1", "-", "phip"}], ")"}], " ", 
+             RowBox[{"1", "-", "phi"}], ")"}], " ", 
             RowBox[{"(", 
              RowBox[{
               RowBox[{"-", 
@@ -28477,59 +28502,52 @@ Cell[BoxData[
                 RowBox[{"95", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                   RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                 RowBox[{"54", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "18344880"}], "+", 
-                 RowBox[{"20007000", " ", "phip"}], "-", 
+                 RowBox[{"20007000", " ", "phi"}], "-", 
                  RowBox[{"13358520", " ", 
-                  SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                  SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                RowBox[{"(", 
                 RowBox[{"34992", " ", 
                  SuperscriptBox["190", 
                   RowBox[{"1", "/", "3"}]], " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                  SuperscriptBox[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                   RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-              RowBox[{
-               FractionBox["1", 
-                RowBox[{"54", " ", 
-                 SuperscriptBox["2", 
-                  RowBox[{"2", "/", "3"}]], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+              FractionBox[
                RowBox[{
                 SuperscriptBox["95", 
                  RowBox[{"1", "/", "3"}]], " ", 
@@ -28537,29 +28555,35 @@ Cell[BoxData[
                  RowBox[{"(", 
                   RowBox[{
                    RowBox[{"-", "66880"}], "+", 
-                   RowBox[{"131100", " ", "phip"}], "+", 
+                   RowBox[{"131100", " ", "phi"}], "+", 
                    RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                    RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                    RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-                 RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}]}], 
-       ")"}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+                 RowBox[{"1", "/", "3"}]]}], 
+               RowBox[{"54", " ", 
+                SuperscriptBox["2", 
+                 RowBox[{"2", "/", "3"}]], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], 
+          ")"}]}]}], ")"}]}], ")"}], "/", 
     RowBox[{"(", 
      RowBox[{
       RowBox[{"(", 
@@ -28567,7 +28591,7 @@ Cell[BoxData[
         RowBox[{
          FractionBox["18", "95"], " ", 
          RowBox[{"(", 
-          RowBox[{"1", "-", "phip"}], ")"}], " ", 
+          RowBox[{"1", "-", "phi"}], ")"}], " ", 
          RowBox[{"(", 
           RowBox[{
            RowBox[{"-", 
@@ -28575,59 +28599,52 @@ Cell[BoxData[
              RowBox[{"95", " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
              RowBox[{"54", " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
            RowBox[{
             RowBox[{"(", 
              RowBox[{
               RowBox[{"-", "18344880"}], "+", 
-              RowBox[{"20007000", " ", "phip"}], "-", 
+              RowBox[{"20007000", " ", "phi"}], "-", 
               RowBox[{"13358520", " ", 
-               SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+               SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
             RowBox[{"(", 
              RowBox[{"34992", " ", 
               SuperscriptBox["190", 
                RowBox[{"1", "/", "3"}]], " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
               SuperscriptBox[
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "66880"}], "+", 
-                 RowBox[{"131100", " ", "phip"}], "+", 
+                 RowBox[{"131100", " ", "phi"}], "+", 
                  RowBox[{"15675", " ", 
-                  SuperscriptBox["phip", "2"]}], "-", 
+                  SuperscriptBox["phi", "2"]}], "-", 
                  RowBox[{"43795", " ", 
-                  SuperscriptBox["phip", "3"]}], "+", 
+                  SuperscriptBox["phi", "3"]}], "+", 
                  RowBox[{"3", " ", 
                   SqrtBox["285"], " ", 
                   SqrtBox[
                    RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-           RowBox[{
-            FractionBox["1", 
-             RowBox[{"54", " ", 
-              SuperscriptBox["2", 
-               RowBox[{"2", "/", "3"}]], " ", 
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+           FractionBox[
             RowBox[{
              SuperscriptBox["95", 
               RowBox[{"1", "/", "3"}]], " ", 
@@ -28635,28 +28652,35 @@ Cell[BoxData[
               RowBox[{"(", 
                RowBox[{
                 RowBox[{"-", "66880"}], "+", 
-                RowBox[{"131100", " ", "phip"}], "+", 
+                RowBox[{"131100", " ", "phi"}], "+", 
                 RowBox[{"15675", " ", 
-                 SuperscriptBox["phip", "2"]}], "-", 
+                 SuperscriptBox["phi", "2"]}], "-", 
                 RowBox[{"43795", " ", 
-                 SuperscriptBox["phip", "3"]}], "+", 
+                 SuperscriptBox["phi", "3"]}], "+", 
                 RowBox[{"3", " ", 
                  SqrtBox["285"], " ", 
                  SqrtBox[
                   RowBox[{
                    RowBox[{"-", "216432"}], "-", 
-                   RowBox[{"423000", " ", "phip"}], "-", 
+                   RowBox[{"423000", " ", "phi"}], "-", 
                    RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                    RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                    RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                    RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                    RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-              RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}], " ", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+              RowBox[{"1", "/", "3"}]]}], 
+            RowBox[{"54", " ", 
+             SuperscriptBox["2", 
+              RowBox[{"2", "/", "3"}]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], ")"}],
+       " ", 
       SuperscriptBox[
        RowBox[{"(", 
         RowBox[{"1", "+", 
@@ -28675,50 +28699,50 @@ Cell[BoxData[
                     RowBox[{"95", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                    RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                     RowBox[{"54", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
                   RowBox[{
                    RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "18344880"}], "+", 
-                    RowBox[{"20007000", " ", "phip"}], "-", 
+                    RowBox[{"20007000", " ", "phi"}], "-", 
                     RowBox[{"13358520", " ", 
-                    SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                    RowBox[{"(", 
                     RowBox[{"34992", " ", 
                     SuperscriptBox["190", 
                     RowBox[{"1", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                     SuperscriptBox[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
                   RowBox[{
                    FractionBox["1", 
@@ -28727,7 +28751,7 @@ Cell[BoxData[
                     RowBox[{"2", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]], 
                    RowBox[{
                     SuperscriptBox["95", 
                     RowBox[{"1", "/", "3"}]], " ", 
@@ -28735,27 +28759,27 @@ Cell[BoxData[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}], "+", 
             RowBox[{
              RowBox[{"(", 
@@ -28767,7 +28791,7 @@ Cell[BoxData[
                RowBox[{
                 FractionBox["18", "95"], " ", 
                 RowBox[{"(", 
-                 RowBox[{"1", "-", "phip"}], ")"}], " ", 
+                 RowBox[{"1", "-", "phi"}], ")"}], " ", 
                 RowBox[{"(", 
                  RowBox[{
                   RowBox[{"-", 
@@ -28775,50 +28799,50 @@ Cell[BoxData[
                     RowBox[{"95", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                    RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                     RowBox[{"54", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
                   RowBox[{
                    RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "18344880"}], "+", 
-                    RowBox[{"20007000", " ", "phip"}], "-", 
+                    RowBox[{"20007000", " ", "phi"}], "-", 
                     RowBox[{"13358520", " ", 
-                    SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                    RowBox[{"(", 
                     RowBox[{"34992", " ", 
                     SuperscriptBox["190", 
                     RowBox[{"1", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                     SuperscriptBox[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
                   RowBox[{
                    FractionBox["1", 
@@ -28827,7 +28851,7 @@ Cell[BoxData[
                     RowBox[{"2", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]], 
                    RowBox[{
                     SuperscriptBox["95", 
                     RowBox[{"1", "/", "3"}]], " ", 
@@ -28835,27 +28859,27 @@ Cell[BoxData[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}]}], 
            ")"}]}]}], ")"}], "2"]}], ")"}]}], "-", 
    RowBox[{
@@ -28875,59 +28899,52 @@ Cell[BoxData[
                 RowBox[{"95", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                   RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                 RowBox[{"54", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "18344880"}], "+", 
-                 RowBox[{"20007000", " ", "phip"}], "-", 
+                 RowBox[{"20007000", " ", "phi"}], "-", 
                  RowBox[{"13358520", " ", 
-                  SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                  SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                RowBox[{"(", 
                 RowBox[{"34992", " ", 
                  SuperscriptBox["190", 
                   RowBox[{"1", "/", "3"}]], " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                  SuperscriptBox[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                   RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-              RowBox[{
-               FractionBox["1", 
-                RowBox[{"54", " ", 
-                 SuperscriptBox["2", 
-                  RowBox[{"2", "/", "3"}]], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+              FractionBox[
                RowBox[{
                 SuperscriptBox["95", 
                  RowBox[{"1", "/", "3"}]], " ", 
@@ -28935,28 +28952,35 @@ Cell[BoxData[
                  RowBox[{"(", 
                   RowBox[{
                    RowBox[{"-", "66880"}], "+", 
-                   RowBox[{"131100", " ", "phip"}], "+", 
+                   RowBox[{"131100", " ", "phi"}], "+", 
                    RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                    RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                    RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-                 RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}], "+", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+                 RowBox[{"1", "/", "3"}]]}], 
+               RowBox[{"54", " ", 
+                SuperscriptBox["2", 
+                 RowBox[{"2", "/", "3"}]], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], 
+          ")"}]}], "+", 
         RowBox[{
          RowBox[{"(", 
           RowBox[{"0.75`", " ", 
@@ -28967,7 +28991,7 @@ Cell[BoxData[
            RowBox[{
             FractionBox["18", "95"], " ", 
             RowBox[{"(", 
-             RowBox[{"1", "-", "phip"}], ")"}], " ", 
+             RowBox[{"1", "-", "phi"}], ")"}], " ", 
             RowBox[{"(", 
              RowBox[{
               RowBox[{"-", 
@@ -28975,59 +28999,52 @@ Cell[BoxData[
                 RowBox[{"95", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                   RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                 RowBox[{"54", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "18344880"}], "+", 
-                 RowBox[{"20007000", " ", "phip"}], "-", 
+                 RowBox[{"20007000", " ", "phi"}], "-", 
                  RowBox[{"13358520", " ", 
-                  SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                  SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                RowBox[{"(", 
                 RowBox[{"34992", " ", 
                  SuperscriptBox["190", 
                   RowBox[{"1", "/", "3"}]], " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                  SuperscriptBox[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                   RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-              RowBox[{
-               FractionBox["1", 
-                RowBox[{"54", " ", 
-                 SuperscriptBox["2", 
-                  RowBox[{"2", "/", "3"}]], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+              FractionBox[
                RowBox[{
                 SuperscriptBox["95", 
                  RowBox[{"1", "/", "3"}]], " ", 
@@ -29035,29 +29052,35 @@ Cell[BoxData[
                  RowBox[{"(", 
                   RowBox[{
                    RowBox[{"-", "66880"}], "+", 
-                   RowBox[{"131100", " ", "phip"}], "+", 
+                   RowBox[{"131100", " ", "phi"}], "+", 
                    RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                    RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                    RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-                 RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}]}], 
-       ")"}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+                 RowBox[{"1", "/", "3"}]]}], 
+               RowBox[{"54", " ", 
+                SuperscriptBox["2", 
+                 RowBox[{"2", "/", "3"}]], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], 
+          ")"}]}]}], ")"}]}], ")"}], "/", 
     RowBox[{"(", 
      RowBox[{
       RowBox[{"(", 
@@ -29065,7 +29088,7 @@ Cell[BoxData[
         RowBox[{
          FractionBox["18", "95"], " ", 
          RowBox[{"(", 
-          RowBox[{"1", "-", "phip"}], ")"}], " ", 
+          RowBox[{"1", "-", "phi"}], ")"}], " ", 
          RowBox[{"(", 
           RowBox[{
            RowBox[{"-", 
@@ -29073,59 +29096,52 @@ Cell[BoxData[
              RowBox[{"95", " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
              RowBox[{"54", " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
            RowBox[{
             RowBox[{"(", 
              RowBox[{
               RowBox[{"-", "18344880"}], "+", 
-              RowBox[{"20007000", " ", "phip"}], "-", 
+              RowBox[{"20007000", " ", "phi"}], "-", 
               RowBox[{"13358520", " ", 
-               SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+               SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
             RowBox[{"(", 
              RowBox[{"34992", " ", 
               SuperscriptBox["190", 
                RowBox[{"1", "/", "3"}]], " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
               SuperscriptBox[
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "66880"}], "+", 
-                 RowBox[{"131100", " ", "phip"}], "+", 
+                 RowBox[{"131100", " ", "phi"}], "+", 
                  RowBox[{"15675", " ", 
-                  SuperscriptBox["phip", "2"]}], "-", 
+                  SuperscriptBox["phi", "2"]}], "-", 
                  RowBox[{"43795", " ", 
-                  SuperscriptBox["phip", "3"]}], "+", 
+                  SuperscriptBox["phi", "3"]}], "+", 
                  RowBox[{"3", " ", 
                   SqrtBox["285"], " ", 
                   SqrtBox[
                    RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-           RowBox[{
-            FractionBox["1", 
-             RowBox[{"54", " ", 
-              SuperscriptBox["2", 
-               RowBox[{"2", "/", "3"}]], " ", 
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+           FractionBox[
             RowBox[{
              SuperscriptBox["95", 
               RowBox[{"1", "/", "3"}]], " ", 
@@ -29133,28 +29149,35 @@ Cell[BoxData[
               RowBox[{"(", 
                RowBox[{
                 RowBox[{"-", "66880"}], "+", 
-                RowBox[{"131100", " ", "phip"}], "+", 
+                RowBox[{"131100", " ", "phi"}], "+", 
                 RowBox[{"15675", " ", 
-                 SuperscriptBox["phip", "2"]}], "-", 
+                 SuperscriptBox["phi", "2"]}], "-", 
                 RowBox[{"43795", " ", 
-                 SuperscriptBox["phip", "3"]}], "+", 
+                 SuperscriptBox["phi", "3"]}], "+", 
                 RowBox[{"3", " ", 
                  SqrtBox["285"], " ", 
                  SqrtBox[
                   RowBox[{
                    RowBox[{"-", "216432"}], "-", 
-                   RowBox[{"423000", " ", "phip"}], "-", 
+                   RowBox[{"423000", " ", "phi"}], "-", 
                    RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                    RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                    RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                    RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                    RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-              RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}], " ", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+              RowBox[{"1", "/", "3"}]]}], 
+            RowBox[{"54", " ", 
+             SuperscriptBox["2", 
+              RowBox[{"2", "/", "3"}]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], ")"}],
+       " ", 
       RowBox[{"(", 
        RowBox[{"1", "+", 
         RowBox[{"0.18947368421052632`", " ", 
@@ -29172,50 +29195,50 @@ Cell[BoxData[
                    RowBox[{"95", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                    RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                    RowBox[{"54", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
                  RowBox[{
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "18344880"}], "+", 
-                    RowBox[{"20007000", " ", "phip"}], "-", 
+                    RowBox[{"20007000", " ", "phi"}], "-", 
                     RowBox[{"13358520", " ", 
-                    SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                   RowBox[{"(", 
                    RowBox[{"34992", " ", 
                     SuperscriptBox["190", 
                     RowBox[{"1", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                     SuperscriptBox[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
                  RowBox[{
                   FractionBox["1", 
@@ -29224,7 +29247,7 @@ Cell[BoxData[
                     RowBox[{"2", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]], 
                   RowBox[{
                    SuperscriptBox["95", 
                     RowBox[{"1", "/", "3"}]], " ", 
@@ -29232,27 +29255,27 @@ Cell[BoxData[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}], "+", 
            RowBox[{
             RowBox[{"(", 
@@ -29264,7 +29287,7 @@ Cell[BoxData[
               RowBox[{
                FractionBox["18", "95"], " ", 
                RowBox[{"(", 
-                RowBox[{"1", "-", "phip"}], ")"}], " ", 
+                RowBox[{"1", "-", "phi"}], ")"}], " ", 
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", 
@@ -29272,50 +29295,50 @@ Cell[BoxData[
                    RowBox[{"95", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                    RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                    RowBox[{"54", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
                  RowBox[{
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "18344880"}], "+", 
-                    RowBox[{"20007000", " ", "phip"}], "-", 
+                    RowBox[{"20007000", " ", "phi"}], "-", 
                     RowBox[{"13358520", " ", 
-                    SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                   RowBox[{"(", 
                    RowBox[{"34992", " ", 
                     SuperscriptBox["190", 
                     RowBox[{"1", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                     SuperscriptBox[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
                  RowBox[{
                   FractionBox["1", 
@@ -29324,7 +29347,7 @@ Cell[BoxData[
                     RowBox[{"2", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]], 
                   RowBox[{
                    SuperscriptBox["95", 
                     RowBox[{"1", "/", "3"}]], " ", 
@@ -29332,27 +29355,27 @@ Cell[BoxData[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}]}], 
           ")"}]}]}], ")"}]}], ")"}]}], "-", 
    RowBox[{
@@ -29372,59 +29395,52 @@ Cell[BoxData[
                 RowBox[{"95", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                   RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                 RowBox[{"54", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "18344880"}], "+", 
-                 RowBox[{"20007000", " ", "phip"}], "-", 
+                 RowBox[{"20007000", " ", "phi"}], "-", 
                  RowBox[{"13358520", " ", 
-                  SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                  SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                RowBox[{"(", 
                 RowBox[{"34992", " ", 
                  SuperscriptBox["190", 
                   RowBox[{"1", "/", "3"}]], " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                  SuperscriptBox[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                   RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-              RowBox[{
-               FractionBox["1", 
-                RowBox[{"54", " ", 
-                 SuperscriptBox["2", 
-                  RowBox[{"2", "/", "3"}]], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+              FractionBox[
                RowBox[{
                 SuperscriptBox["95", 
                  RowBox[{"1", "/", "3"}]], " ", 
@@ -29432,28 +29448,35 @@ Cell[BoxData[
                  RowBox[{"(", 
                   RowBox[{
                    RowBox[{"-", "66880"}], "+", 
-                   RowBox[{"131100", " ", "phip"}], "+", 
+                   RowBox[{"131100", " ", "phi"}], "+", 
                    RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                    RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                    RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-                 RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}], "+", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+                 RowBox[{"1", "/", "3"}]]}], 
+               RowBox[{"54", " ", 
+                SuperscriptBox["2", 
+                 RowBox[{"2", "/", "3"}]], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], 
+          ")"}]}], "+", 
         RowBox[{
          RowBox[{"(", 
           RowBox[{"0.75`", " ", 
@@ -29464,7 +29487,7 @@ Cell[BoxData[
            RowBox[{
             FractionBox["18", "95"], " ", 
             RowBox[{"(", 
-             RowBox[{"1", "-", "phip"}], ")"}], " ", 
+             RowBox[{"1", "-", "phi"}], ")"}], " ", 
             RowBox[{"(", 
              RowBox[{
               RowBox[{"-", 
@@ -29472,59 +29495,52 @@ Cell[BoxData[
                 RowBox[{"95", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                   RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                 RowBox[{"54", " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
               RowBox[{
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "18344880"}], "+", 
-                 RowBox[{"20007000", " ", "phip"}], "-", 
+                 RowBox[{"20007000", " ", "phi"}], "-", 
                  RowBox[{"13358520", " ", 
-                  SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                  SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                RowBox[{"(", 
                 RowBox[{"34992", " ", 
                  SuperscriptBox["190", 
                   RowBox[{"1", "/", "3"}]], " ", 
                  RowBox[{"(", 
                   RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                  SuperscriptBox[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                   RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-              RowBox[{
-               FractionBox["1", 
-                RowBox[{"54", " ", 
-                 SuperscriptBox["2", 
-                  RowBox[{"2", "/", "3"}]], " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+              FractionBox[
                RowBox[{
                 SuperscriptBox["95", 
                  RowBox[{"1", "/", "3"}]], " ", 
@@ -29532,29 +29548,35 @@ Cell[BoxData[
                  RowBox[{"(", 
                   RowBox[{
                    RowBox[{"-", "66880"}], "+", 
-                   RowBox[{"131100", " ", "phip"}], "+", 
+                   RowBox[{"131100", " ", "phi"}], "+", 
                    RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                    RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                    RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-                 RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}]}], 
-       ")"}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+                 RowBox[{"1", "/", "3"}]]}], 
+               RowBox[{"54", " ", 
+                SuperscriptBox["2", 
+                 RowBox[{"2", "/", "3"}]], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], 
+          ")"}]}]}], ")"}]}], ")"}], "/", 
     RowBox[{"(", 
      RowBox[{
       RowBox[{"(", 
@@ -29562,7 +29584,7 @@ Cell[BoxData[
         RowBox[{
          FractionBox["18", "95"], " ", 
          RowBox[{"(", 
-          RowBox[{"1", "-", "phip"}], ")"}], " ", 
+          RowBox[{"1", "-", "phi"}], ")"}], " ", 
          RowBox[{"(", 
           RowBox[{
            RowBox[{"-", 
@@ -29570,59 +29592,52 @@ Cell[BoxData[
              RowBox[{"95", " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
              RowBox[{"54", " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
            RowBox[{
             RowBox[{"(", 
              RowBox[{
               RowBox[{"-", "18344880"}], "+", 
-              RowBox[{"20007000", " ", "phip"}], "-", 
+              RowBox[{"20007000", " ", "phi"}], "-", 
               RowBox[{"13358520", " ", 
-               SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+               SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
             RowBox[{"(", 
              RowBox[{"34992", " ", 
               SuperscriptBox["190", 
                RowBox[{"1", "/", "3"}]], " ", 
               RowBox[{"(", 
                RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
               SuperscriptBox[
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", "66880"}], "+", 
-                 RowBox[{"131100", " ", "phip"}], "+", 
+                 RowBox[{"131100", " ", "phi"}], "+", 
                  RowBox[{"15675", " ", 
-                  SuperscriptBox["phip", "2"]}], "-", 
+                  SuperscriptBox["phi", "2"]}], "-", 
                  RowBox[{"43795", " ", 
-                  SuperscriptBox["phip", "3"]}], "+", 
+                  SuperscriptBox["phi", "3"]}], "+", 
                  RowBox[{"3", " ", 
                   SqrtBox["285"], " ", 
                   SqrtBox[
                    RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
-           RowBox[{
-            FractionBox["1", 
-             RowBox[{"54", " ", 
-              SuperscriptBox["2", 
-               RowBox[{"2", "/", "3"}]], " ", 
-              RowBox[{"(", 
-               RowBox[{
-                RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+           FractionBox[
             RowBox[{
              SuperscriptBox["95", 
               RowBox[{"1", "/", "3"}]], " ", 
@@ -29630,28 +29645,35 @@ Cell[BoxData[
               RowBox[{"(", 
                RowBox[{
                 RowBox[{"-", "66880"}], "+", 
-                RowBox[{"131100", " ", "phip"}], "+", 
+                RowBox[{"131100", " ", "phi"}], "+", 
                 RowBox[{"15675", " ", 
-                 SuperscriptBox["phip", "2"]}], "-", 
+                 SuperscriptBox["phi", "2"]}], "-", 
                 RowBox[{"43795", " ", 
-                 SuperscriptBox["phip", "3"]}], "+", 
+                 SuperscriptBox["phi", "3"]}], "+", 
                 RowBox[{"3", " ", 
                  SqrtBox["285"], " ", 
                  SqrtBox[
                   RowBox[{
                    RowBox[{"-", "216432"}], "-", 
-                   RowBox[{"423000", " ", "phip"}], "-", 
+                   RowBox[{"423000", " ", "phi"}], "-", 
                    RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                    RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                    RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                    RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                    RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
-              RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}], " ", 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
+              RowBox[{"1", "/", "3"}]]}], 
+            RowBox[{"54", " ", 
+             SuperscriptBox["2", 
+              RowBox[{"2", "/", "3"}]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], ")"}]}]}], ")"}],
+       " ", 
       RowBox[{"(", 
        RowBox[{"1", "+", 
         RowBox[{"0.18947368421052632`", " ", 
@@ -29669,50 +29691,50 @@ Cell[BoxData[
                    RowBox[{"95", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                    RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                    RowBox[{"54", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
                  RowBox[{
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "18344880"}], "+", 
-                    RowBox[{"20007000", " ", "phip"}], "-", 
+                    RowBox[{"20007000", " ", "phi"}], "-", 
                     RowBox[{"13358520", " ", 
-                    SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                   RowBox[{"(", 
                    RowBox[{"34992", " ", 
                     SuperscriptBox["190", 
                     RowBox[{"1", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                     SuperscriptBox[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
                  RowBox[{
                   FractionBox["1", 
@@ -29721,7 +29743,7 @@ Cell[BoxData[
                     RowBox[{"2", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]], 
                   RowBox[{
                    SuperscriptBox["95", 
                     RowBox[{"1", "/", "3"}]], " ", 
@@ -29729,27 +29751,27 @@ Cell[BoxData[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}], "+", 
            RowBox[{
             RowBox[{"(", 
@@ -29761,7 +29783,7 @@ Cell[BoxData[
               RowBox[{
                FractionBox["18", "95"], " ", 
                RowBox[{"(", 
-                RowBox[{"1", "-", "phip"}], ")"}], " ", 
+                RowBox[{"1", "-", "phi"}], ")"}], " ", 
                RowBox[{"(", 
                 RowBox[{
                  RowBox[{"-", 
@@ -29769,50 +29791,50 @@ Cell[BoxData[
                    RowBox[{"95", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "2"}], "+", "phip"}], ")"}]}], 
+                    RowBox[{"-", "2"}], "+", "phi"}], ")"}]}], 
                    RowBox[{"54", " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]]}], "-", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]]}], "-", 
                  RowBox[{
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"-", "18344880"}], "+", 
-                    RowBox[{"20007000", " ", "phip"}], "-", 
+                    RowBox[{"20007000", " ", "phi"}], "-", 
                     RowBox[{"13358520", " ", 
-                    SuperscriptBox["phip", "2"]}]}], ")"}], "/", 
+                    SuperscriptBox["phi", "2"]}]}], ")"}], "/", 
                   RowBox[{"(", 
                    RowBox[{"34992", " ", 
                     SuperscriptBox["190", 
                     RowBox[{"1", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}], " ", 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", 
                     SuperscriptBox[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}], ")"}]}], "+", 
                  RowBox[{
                   FractionBox["1", 
@@ -29821,7 +29843,7 @@ Cell[BoxData[
                     RowBox[{"2", "/", "3"}]], " ", 
                     RowBox[{"(", 
                     RowBox[{
-                    RowBox[{"-", "1"}], "+", "phip"}], ")"}]}]], 
+                    RowBox[{"-", "1"}], "+", "phi"}], ")"}]}]], 
                   RowBox[{
                    SuperscriptBox["95", 
                     RowBox[{"1", "/", "3"}]], " ", 
@@ -29829,30 +29851,30 @@ Cell[BoxData[
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"-", "66880"}], "+", 
-                    RowBox[{"131100", " ", "phip"}], "+", 
+                    RowBox[{"131100", " ", "phi"}], "+", 
                     RowBox[{"15675", " ", 
-                    SuperscriptBox["phip", "2"]}], "-", 
+                    SuperscriptBox["phi", "2"]}], "-", 
                     RowBox[{"43795", " ", 
-                    SuperscriptBox["phip", "3"]}], "+", 
+                    SuperscriptBox["phi", "3"]}], "+", 
                     RowBox[{"3", " ", 
                     SqrtBox["285"], " ", 
                     SqrtBox[
                     RowBox[{
                     RowBox[{"-", "216432"}], "-", 
-                    RowBox[{"423000", " ", "phip"}], "-", 
+                    RowBox[{"423000", " ", "phi"}], "-", 
                     RowBox[{"5393804", " ", 
-                    SuperscriptBox["phip", "2"]}], "+", 
+                    SuperscriptBox["phi", "2"]}], "+", 
                     RowBox[{"15769630", " ", 
-                    SuperscriptBox["phip", "3"]}], "-", 
+                    SuperscriptBox["phi", "3"]}], "-", 
                     RowBox[{"12592841", " ", 
-                    SuperscriptBox["phip", "4"]}], "+", 
+                    SuperscriptBox["phi", "4"]}], "+", 
                     RowBox[{"2865600", " ", 
-                    SuperscriptBox["phip", "5"]}], "-", 
+                    SuperscriptBox["phi", "5"]}], "-", 
                     RowBox[{"9153", " ", 
-                    SuperscriptBox["phip", "6"]}]}]]}]}], ")"}], 
+                    SuperscriptBox["phi", "6"]}]}]]}]}], ")"}], 
                     RowBox[{"1", "/", "3"}]]}]}]}], ")"}]}]}], ")"}]}]}], 
           ")"}]}]}], ")"}]}], ")"}]}]}], "]"}]], "Output",
- CellChangeTimes->{3.709964938984787*^9, 3.7099651274228864`*^9}]
+ CellChangeTimes->{3.709988984145421*^9, 3.7099893726093545`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -29872,19 +29894,138 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"plot", "[", 
-  RowBox[{"f", ",", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"h", "[", "phi", "]"}], ",", 
    RowBox[{"{", 
-    RowBox[{"phip", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+    RowBox[{"phi", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.709964502169589*^9, 3.7099645270371523`*^9}, {
-  3.7099655162192516`*^9, 3.709965518805209*^9}}],
+  3.7099655162192516`*^9, 3.709965518805209*^9}, {3.7099890556396475`*^9, 
+  3.7099890692195177`*^9}, {3.7099891129954257`*^9, 3.7099891150560226`*^9}, {
+  3.7099893781926374`*^9, 3.7099893785604978`*^9}}],
 
 Cell[BoxData[
- RowBox[{"plot", "[", 
-  RowBox[{"f", ",", 
-   RowBox[{"{", 
-    RowBox[{"phip", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.7099645306245146`*^9, 3.709964952589346*^9}]
+ GraphicsBox[{{{{}, {}, 
+     TagBox[
+      {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+       Opacity[1.], LineBox[CompressedData["
+1:eJwBIQLe/SFib1JlAgAAACEAAAACAAAASmXo0cDpVT6M19o1M8GgwARDGnDf
+GTQ/GpsYsyzGoMAzn5icsxlEP0vR+Wony6DAS83Xsp0ZVD8nd4WLINWgwFdk
+972SGWQ/Du38lSHpoMDdL4dDjRl0P+8kVwRfEaHAoBVPhooZhD80pToHyWKh
+wIEIsyeJGZQ/YEkuv2kJosBYWaGv8PGkP0s32gzehKPAC/+BXEcerz/z8soK
+Xv+kwCVR7ujDi7Q/UvHqZ5qLpsB3zjk/mPS5P5zggFYEWajAF7QR3gEBvz9E
+rs7dFimqwLbiQ8zPPMI/jixGY2xJrMDCap0bWezEP+yMcXt6j67A9SY9D61t
+xz9ofORJa2+wwAL5qxAbJco/OFeu3R/OscA2/2C2U67MP3qcJLmrNbPAzIQ0
+zsYqzz9E8UgAebi0wB+Q6/mp7tA/OB5G0QyItsDr99/e1TDSPzjx6KTAZ7jA
+pOq7yg6O0z/hXKUJ/aq6wA4dp+/k5NQ/L8Q/ePoovcCMabVmoCTWPzBmoYHP
+w7/A9kCr5Gh/1z8StpuYL3nBwHQyxLQWw9g/BRg4zFknw8DfrsSL0SHaP1ge
+jNW2OcXA+2rUmyl62z++DoABcY/HwCtBB/5mu9w/qXZGw/4OysBHoiFnsRfe
+Pzpz7yN8L83Adx1fIuFc3z+oXpWR5EnQwCzsVQvXTeA/9cEi7hc40sCmUIKp
+Ss/gP/d72is9BdTA0tkTlw==
+        "]], LineBox[CompressedData["
+1:eJwVVHk41OsfZRAJ2ffsy4yQW24p5VMXSVFIpZLc0nJFlkh1UVzktkiupYZS
+WiwR7VrwviKkorGMSMzynfnOjF128fP74zznOc95znnOX8fwUIjXEYqYmNib
+Bfyfj+sWGya09gI3tV5OT6sVpQWZLmqa7wXbBxMFAtyKlD/uk+iUZEFW7ZOf
+Cu0LOrH216ACC/Kol34VzLUixRn6iI4xC3o9djzW92xDcnzn76e2seCo9Ugc
+zLQhyarsUuMcFrh8tN6dc4SJOtc7bem5zYKAW09eBoczUembvl76XRacc/LN
+2HKeifa93KCsnM+CzSvrhrRvMtGTkp4IsacsIOf+1ln1mYn8cozXddexYNPU
+AYe1azpQ+dlHNZmjLNBavYL5Q/kbOmH79tvibWxo8o0KrRV2ItTcVlzuzgYT
+r7SW6alOpBY8dP6YBxuexdxvt1/chaoemJrV7mKDw3SRoNe8C6lopIZf8GfD
+GdHiuPIjXejtVMCSiUg2lJdvv5bP6UJLqhQ2cO8s5FUUWzrI7+iR66E7leNs
+0JL7xd6l04NsLQ0dYIoNZlfsazIse1ClQm9X1QwbMhnPstgbelBzywENLMaB
+Q5fPbb7n34N+Htib8l6WA4En0vWqH/Ygh3CP6Ho9DqjJdPoj7V7UTHfwYWzm
+wJEcvbTHj3vRmEhbkZfJAeN1XuHNfSyUfotfl3OTA0H2U8vNJllo1Y7n53fm
+cGC2QpKeKMFGYU/dB9FdDphM7qj4U5uN+s9c+JJdzIGBFtI1dQsbEVK8K57V
+HNgXVjnS9JCN2vSfLK7o50DWhor11BMc9GKni0S6ExdMahvUeWoESt5Wnqjr
+wgU6bY+jqjGBfB1pMg9cubB700SWuw2BKKuWyL/czgUlGUsBayuBtis3qXf4
+cKGrczg67QKByObdFrrBXGhOImh6AwTS3n7U834GF0JruSN2DB46vyUx9zmP
+C/13XjEvYBIx/I772gi4IHYthp/ylUQmkdu0ikVcULZ7pfiIRaKPd5X+uzfE
+BcdG9QF5igCpztxKSpvmQmOw2rXzjgJUUPIyOFSBAJrrpwSDBgFqVibtLVcT
+8Mx864MvPUJkRGuczLcjoKqh9EvVsBBFwuMXxvYEHJyOsMESIqQdFLFCZyMB
+wFrJ/2kuQgG1YsayWwk4WVxoZRQmQpNRWrLkAQJuTtLb7i/qQ4bdWzvuJRLQ
+SM343ubQjy5V25fuSiZgu5XH0kfe/Wgk3zJJ+jIB5oo23pmB/ag6XMH2RCoB
+03aaiaWZ/ShAhnFtZTYB7d9N8gYH+1HBqr0uuIyASFlHD/RwAFlfOvbyRxcB
+hyMc765XGUKZIT5XU38Q8HqE7/NAfwjNe7sG/MEigFLPltGxHELN+suVH/II
+6IjcnWnlPITCXgwEBw8TcIWS6jYcNYSe90aazi7iwZ61kiWU3iG0bk1CutZK
+HpRVSkc1vRlG7Ye0Vt+y5YFR7jFV6fphdCrlMdNgDQ9s38TLuLUNo2KiQ5u6
+nge5qoTd3OAw0ku3urt6Mw9kOgezpcxGEGW4vWTnPh6EhuKm0vQR1FhEq7sa
+zwPnEm/GSPQoOt5eeVwpkQf+KmL2k5dHkSTFWzbjIg8yJ27ukM8eRQ57Y91z
+rvDA/bR509HXo6hMuqWlKJMHV2hVod/GR1F6QHRvXREPDKLUx5oifiJfvaYp
+8RYeVDpWjd+OGUMKWuEv3rbxIP6zi+3q1DGEVdTCIjt4kM/QXM3JG0Nmi/eT
+ZDcPEv5ylj5fP4YGR3ntTSQP/mWtC8Oq4yi+Ye7ZrTkemGZaPkl5Mo4KIqxP
+rrXgQ+z+NUp//JpA+0K+0kYt+ZA41lHYqjyJ5AMjiOIVfFim8CM+jjqJwg++
+8TX4nQ+zHw9kWXhPIvutm7dJb+RD4Kui95XFk+iLvh+1bRcfRvtsRlQOT6Gx
+j1fZoXF84Ho03SwgptH3JW3HZ//hw5186vblv6ZRtZvu4MUkPqSYRjc1qM6g
+1C9FM7cv86Fz6fyPfU4zyIJRp/o5gw9dlL2NX+/PIL9v4i60Ij4MbZV9YHdi
+Fn3gRz5iMfjQnt/lQ1s6h4qpFb8Ft/FhSjaG/bfFHPrvL8nySSYfquj9lCHn
+OeQvSqtZ2s2HT4b3OjbEzKHpgdLuDXw+WKzKzo3sn0MrxgVL6TN8iDd5aZ7Y
+Oo9uSPpFeJmQcKjsp9H+HjE8d1jj969mJChFcWolBsVwwPvmsR00EgqOmC9F
+c2LYJt4xyt2ahEsZOkoReuK4fp56bosdCVnsys2f/cTxxPToeQc3ElaUxLL9
+OeJ49/C/ly0iSGhy8wr/NUvB7zwc3QpPL+SdD3/Zv1QCG5XNylHPkgt/VriC
+YSiBB06GpJjGkuD9w+uOtIsETuzzvm6QTML7g513bqZJ4Od8/Sz1HBIozA3+
+sdaSWOXHizxKDQm2H1xvxJ6TwilyMTGvPpDwrvviPpk0KSxr7+QT1EDCFDKa
+fl4ohSk3GPLtX0hwWarQHvVNCo94Dp4p/EbC2V1/bnq0bhFurqXu8BgkYUDA
+7JGUlMZXSrJnbmkLoCnKPCThuQyW+X6o3WuZAE4ky9aMNsvgBFmLJ9IGAhCv
+uO55rV8G/32s/GiYqQACR+lhbuaLcaBh21cnGwHkCoxDyZzFeEuGQoHIWQAV
+X16fmUiVxVIxcd5rwwRwTOP0SsNcOfx8uG+q6pQAZM1O02Kr5HDAUZ/czacF
+oJ0ldVWuVw7X7Fgh3Pm3AEoeZKtXGcrjBKPu8ycTBdCjWfM5MV8eS9bbPbp3
+UwDvXpVdG36ngCkqQ+IK1QJ43KkTpfWvIn56cX9+eo0AznXT8PscRXxo9oOb
+Tp0AklJmb18tU8TVxK0s6qeFfSFv1eI6FHF8+TYrx3YBvD2WrDhAU8Lifvk+
+Z4QC0Jp+76PTooTFCv1K2cpCSJQKGqraqII/9DFP5qoJwVvMW6Vvnwq+YuNp
+7asphKTW5g1bIlWwRrljSdsyIZz7tutoWpEKtq6jPqqnCsH9+YVT5zRUsS8x
+8vCxgxA+xu3VFp9RxUa0oKMnNglBd9AlPEBTDZNBhCnVSQjyMYy987+r4VM/
+mffvui70BzEF3WFq+JJERV66txCSHXf1uvWp4deGF2+fCxTClrXhP4L71HHs
+ETG/NcEL/dG/J1yW18BOhWeX/QwRwvGdyq8F1hq42SYoJzhSCAGFG7cFhmtg
+Ejzp/heEgF+4Ma/OamB1P53MzZlCMI+jq48u08Lh9NKrytVCGEhRtXal6+BX
+s/SL1TVCsOYuCl1So4Nn/ZLiwuuEcOLCYaHRgA6+aHwgkvFpwXeUHvd21MU5
+xbIH0phC6LhUP9c9rItrK49YKvcLQWdP2WtPfz0sa+hpVj0oBHFfBd3Wa3rY
+45/1BuEjC7rB7uWbKj3c6aKiypgQwrO8jnflBvp4oBnNXKeIgLrIdTaDr481
+OTqNSpoiMElNViJrDPABZ+larC2CMc08I/leA5yXP1IZtkwE63uPRQTPGGDL
+oIanX41EECpWdZS90hBvGjtNv24lAufC68zS+4Y4UJrxl5KjCIbvVzeGpxvh
+iuXJMkonRRBik5ErKDTBq1s1PqeFiiBGaW1BeKMJLovOv656SgSLVh9f4txv
+gvM+f9DWPCMChSHKkobfTHFyiJSVfrwItPZwHgZUmmKvZ/GeVpkiKI3/9Fsh
+zww37ldWL70hgny9/05byptjJ8m8TptsEfDj31Kkbc3xml34sO0dEWS7uDNr
+482x7sR8pH2RCMLcRs4mmVAxf10M3bVSBC6bhunzZ2nYnyN3sBGJwKrS58ap
+hzTceTnH2P29CJ5szdDwaKHhT9/fFnvUi0Am6cwpF2sL/DR2unIPQwSP305G
+ewkscHR1FOcITwTb3qcy5iMscaajdoAuXwTj43pi9QmW+H8COCHk
+        "]]},
+      Annotation[#, 
+       "Charting`Private`Tag$5337#1"]& ], {}}, {{}, {}, {}}}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 1}, {-934500.0002362418, 0.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7099645306245146`*^9, 3.709964952589346*^9, {3.7099890609977484`*^9, 
+   3.709989070531058*^9}, 3.7099891178397408`*^9, 3.7099893829243064`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -29892,23 +30033,41 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"FindRoot", "[", 
   RowBox[{
-   RowBox[{"f", "[", 
-    RowBox[{"phip", ",", "0.95"}], "]"}], ",", 
+   RowBox[{"h", "[", "phi", "]"}], ",", 
    RowBox[{"{", 
-    RowBox[{"phip", ",", 
-     RowBox[{"Rationalize", "[", "0.9", "]"}]}], "}"}]}], "]"}]], "Input",
+    RowBox[{"phi", ",", "0"}], "}"}], ",", 
+   RowBox[{"MaxIterations", "\[Rule]", "10000"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.7099637539738283`*^9, 3.7099637758397007`*^9}, {
    3.7099638949611454`*^9, 3.7099639009795375`*^9}, {3.709965104166073*^9, 
    3.709965122290454*^9}, 3.709965170536373*^9, {3.7099652132025433`*^9, 
-   3.7099652324193707`*^9}, {3.7099652708782887`*^9, 3.709965275934032*^9}}],
+   3.7099652324193707`*^9}, {3.7099652708782887`*^9, 3.709965275934032*^9}, {
+   3.7099909183871593`*^9, 3.709990956230765*^9}, 3.7099910906593685`*^9, {
+   3.709991222376248*^9, 3.709991350198533*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FindRoot","jsing",
+   "\"Encountered a singular Jacobian at the point \
+\\!\\(\\*RowBox[{\\\"{\\\", \\\"phi\\\", \\\"}\\\"}]\\) = \\!\\(\\*RowBox[{\\\
+\"{\\\", RowBox[{\\\"-\\\", \\\"1.0527396520895846`*^163\\\"}], \
+\\\"}\\\"}]\\). Try perturbing the initial point(s).\"",2,34,21,
+   26872582714359487564,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.709990944995596*^9, 3.7099909568965263`*^9}, 
+   3.7099910928228626`*^9, {3.709991231652697*^9, 3.7099912599217997`*^9}, {
+   3.709991299290212*^9, 3.7099913518237085`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"phip", "\[Rule]", "22.08053550625429`"}], "}"}]], "Output",
+  RowBox[{"phi", "\[Rule]", 
+   RowBox[{"-", "1.0527396520895846`*^163"}]}], "}"}]], "Output",
  CellChangeTimes->{
   3.7099637768878365`*^9, 3.709963902677704*^9, 3.7099639648714657`*^9, 
    3.7099649578090916`*^9, 3.70996514961117*^9, {3.7099652137763143`*^9, 
-   3.7099652343493333`*^9}, {3.7099652736608653`*^9, 3.709965277559187*^9}}]
+   3.7099652343493333`*^9}, {3.7099652736608653`*^9, 3.709965277559187*^9}, {
+   3.7099909449971013`*^9, 3.7099909569203963`*^9}, 3.7099910928679867`*^9, {
+   3.709991232448426*^9, 3.709991260649356*^9}, {3.709991299938982*^9, 
+   3.70999135184429*^9}}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -30117,64 +30276,66 @@ Cell[CellGroupData[{
 Cell[168748, 4137, 193, 2, 70, "Section"],
 Cell[168944, 4141, 703, 12, 87, "Text"],
 Cell[CellGroupData[{
-Cell[169672, 4157, 4155, 109, 202, "Input"],
-Cell[173830, 4268, 10712, 295, 368, "Output"]
+Cell[169672, 4157, 4112, 103, 202, "Input"],
+Cell[173787, 4262, 10736, 295, 368, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[184579, 4568, 156, 2, 49, "Subsection"],
-Cell[184738, 4572, 242, 6, 30, "Text"],
-Cell[184983, 4580, 2829, 73, 88, "Input"],
-Cell[187815, 4655, 1253, 37, 50, "Input"],
-Cell[189071, 4694, 1206, 28, 30, "Input"],
+Cell[184560, 4562, 156, 2, 49, "Subsection"],
+Cell[184719, 4566, 242, 6, 30, "Text"],
+Cell[184964, 4574, 2859, 74, 88, "Input"],
+Cell[187826, 4650, 1253, 37, 50, "Input"],
+Cell[189082, 4689, 1498, 34, 50, "Input"],
 Cell[CellGroupData[{
-Cell[190302, 4726, 299, 6, 50, "Input"],
-Cell[190604, 4734, 235, 4, 30, "Output"]
+Cell[190605, 4727, 299, 6, 50, "Input"],
+Cell[190907, 4735, 261, 5, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[190876, 4743, 400, 9, 52, "Input"],
-Cell[191279, 4754, 356, 8, 23, "Message"],
-Cell[191638, 4764, 395, 8, 23, "Message"],
-Cell[192036, 4774, 359, 7, 23, "Message"],
-Cell[192398, 4783, 400, 8, 23, "Message"],
-Cell[192801, 4793, 362, 8, 23, "Message"],
-Cell[193166, 4803, 436, 8, 23, "Message"],
-Cell[193605, 4813, 399, 8, 23, "Message"],
-Cell[194007, 4823, 438, 8, 23, "Message"]
+Cell[191205, 4745, 441, 10, 52, "Input"],
+Cell[191649, 4757, 380, 9, 21, "Message"],
+Cell[192032, 4768, 419, 9, 21, "Message"],
+Cell[192454, 4779, 383, 8, 21, "Message"],
+Cell[192840, 4789, 423, 9, 21, "Message"],
+Cell[193266, 4800, 386, 9, 21, "Message"],
+Cell[193655, 4811, 460, 9, 21, "Message"],
+Cell[194118, 4822, 425, 9, 21, "Message"],
+Cell[194546, 4833, 464, 9, 21, "Message"]
 }, Open  ]],
-Cell[194460, 4834, 903, 14, 30, "Input"],
+Cell[195025, 4845, 903, 14, 30, "Input"],
 Cell[CellGroupData[{
-Cell[195388, 4852, 820, 21, 69, "Input"],
-Cell[196211, 4875, 1414716, 23217, 387, 1404975, 23056, "CachedBoxData", \
+Cell[195953, 4863, 820, 21, 69, "Input"],
+Cell[196776, 4886, 1414716, 23217, 387, 1404975, 23056, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1610964, 28097, 435, 10, 30, "Input"],
-Cell[1611402, 28109, 212, 4, 30, "Output"]
+Cell[1611529, 28108, 435, 10, 30, "Input"],
+Cell[1611967, 28120, 212, 4, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1611651, 28118, 383, 9, 30, "Input"],
-Cell[1612037, 28129, 167, 3, 30, "Output"]
+Cell[1612216, 28129, 383, 9, 30, "Input"],
+Cell[1612602, 28140, 167, 3, 30, "Output"]
+}, Open  ]],
+Cell[1612784, 28146, 1182, 30, 30, "Input"],
+Cell[CellGroupData[{
+Cell[1613991, 28180, 255, 6, 30, "Input"],
+Cell[1614249, 28188, 70869, 1688, 2672, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1612241, 28137, 927, 23, 30, "Input"],
-Cell[1613171, 28162, 71607, 1692, 2384, "Output"]
+Cell[1685155, 29881, 200, 4, 30, "Input"],
+Cell[1685358, 29887, 158, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1684815, 29859, 200, 4, 30, "Input"],
-Cell[1685018, 29865, 158, 3, 30, "Output"]
+Cell[1685553, 29895, 447, 9, 30, "Input"],
+Cell[1686003, 29906, 6448, 121, 213, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1685213, 29873, 261, 6, 30, "Input"],
-Cell[1685477, 29881, 209, 5, 30, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1685723, 29891, 537, 11, 30, InheritFromParent],
-Cell[1686263, 29904, 343, 6, 30, "Output"]
+Cell[1692488, 30032, 646, 12, 30, "Input"],
+Cell[1693137, 30046, 584, 11, 30, "Message"],
+Cell[1693724, 30059, 544, 10, 66, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[1686657, 29916, 147, 1, 72, "Chapter"]
+Cell[1694319, 30075, 147, 1, 72, "Chapter"]
 }, Open  ]]
 }
 ]
