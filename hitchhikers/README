@@ -1,0 +1,16 @@
+This release contains the first release (r1) of:
+
+-- The Hitchhiker's Guide to Adaptive Dynamics, an introduction to Adaptive Dynamics. 
+
+-- The AdaptiveDynamics package for Mathematics which generates
+   pairwise invasibility and trait evolution plots.
+
+No installation should be necessary; just open "example.nb" and look through it. 
+The Hitchhiker's Guide to Adaptive Dynamics is the file hitcchikers_guide.pdf and
+the associated sources can be found in the directory tex/. 
+
+The guide is licensed under the GNU Free Documentation License and the Mathematica
+package under the GNU Public License. The specific terms are given in the files 
+FDL.TXT and GPL.TXT respectively. 
+
+Enjoy! 
