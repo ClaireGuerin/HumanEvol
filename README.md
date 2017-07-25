@@ -1,3 +1,3 @@
 # HumanEvol
 
-The hitchhiker's folder contains a Mathwas written by Brannstrom et al (2013). 
+The hitchhiker's folder contains a Matlab package that was written by Brannstrom et al (2013). 
