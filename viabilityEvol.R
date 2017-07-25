@@ -2,7 +2,7 @@ viability = function(xval,muval,sigmaval,maxval=1){
   v = maxval*exp(-(xval-muval)^2/(2*sigmaval^2))
   return(v)}
 
-nGen = 1000
+nGen = 10000
 nStrategies = 100
 m = 0.1 # upmigration capacity
 f1 = 0.1 # proportion of individuals in class 1 at t=0
