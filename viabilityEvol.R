@@ -1,5 +1,5 @@
-viability = function(xval,muval,sigmaval,maxval=1){
-  v = maxval*exp(-(xval-muval)^2/(2*sigmaval^2))
+viability = function(xVal,muVal,sigmaVal,maxVal=1){
+  v = maxVal*exp(-(xVal-muVal)^2/(2*sigmaVal^2))
   return(v)}
 
 nGen = 10000
@@ -62,9 +62,18 @@ for (j in 1:nStrategies){
 }
 
 invasionMat = matrix(NA,nStrategies,nStrategies)
-invasionMat = p[nGen,,]
-cutoff = 0.5
-invasionMat[invasionMat < cutoff] = 0
-invasionMat[invasionMat > cutoff] = 1
+invasionMat = 1-p[nGen,,] # frequency of mutant after n generations
 
-filled.contour(invasionMat, color.palette = grey.colors)
+plotFrequency = filled.contour(invasionMat, color.palette = grey.colors)
+any(invasionMat == 0 | invasionMat == 1)
+fullInvasion = which(invasionMat == 1)
+fullFail = which(invasionMat == 0)
+
+nInvade = length(fullInvasion)
+nFail = length(fullFail) # 0: seems like there is no situation where the mutant fully disappears.
+
+cutoff = 1
+invasionMat[invasionMat < cutoff] = 0
+# invasionMat[invasionMat >= cutoff] = 1
+
+plotInvasion = filled.contour(invasionMat, color.palette = grey.colors)
