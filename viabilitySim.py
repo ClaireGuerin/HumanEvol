@@ -9,6 +9,7 @@ This is a temporary script file.
 
 import math
 import numpy as np
+import time
 
 def Viability(xVal, muVal, sigmaVal, maxVal = 1):
     
@@ -35,6 +36,8 @@ sigma1 = 0.1
 mu2 = 0.3
 sigma2 = 0.2
 max2 = 0.8
+
+startTime = time.clock()
 
 for l in range(nRun):
     
@@ -77,3 +80,5 @@ for l in range(nRun):
 
     runDict[runTime] = p
     del p
+    
+endTime = time.clock()-startTime
