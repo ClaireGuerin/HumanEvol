@@ -10,15 +10,10 @@ import itertools as it
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
-
 mutationRate = 0.0005
 mutationStep = 0.01
 
 mutation = 0 # no mutation at this step; if mutation: 1
-
-
 
 class Population():
     

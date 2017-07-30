@@ -7,9 +7,12 @@ This is a temporary script file.
 
 # run in command line: reset -f
 
+from __future__ import division
+import matplotlib.pyplot as plt
 import math
 import numpy as np
 import time
+
 
 def Viability(xVal, muVal, sigmaVal, maxVal = 1):
     
@@ -82,3 +85,18 @@ for l in range(nRun):
     del p
     
 endTime = time.clock()-startTime
+
+allRuns = sorted(runDict.keys())
+mat = np.empty([nStrategies, nStrategies, nRun])
+
+plt.figure(1)
+
+for n in range(nRun):
+    
+    key = allRuns[n]
+    mat[:,:,n] = runDict[key][-1]
+    plt.subplot(3,1,n)
+    plt.contourf(mat[:,:,n]) 
+    
+stDev = np.std(mat,3)
+nonEquilibrium = stDev > 0
