@@ -11,7 +11,7 @@ from __future__ import division
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-from Utilities import *
+import Utilities as ut
     
 r = 1/10 # recombination rate
 t = 100 # number of generations
@@ -98,8 +98,8 @@ class Population():
 
     def nutritionSelection(self):
         
-        haplotypes = np.transpose(np.array(self.haplotypes).reshape(1,4))
-        classes = np.array(self.classes).reshape(1,2)
+        haplotypes = ut.hapTransform(self.haplotypes)
+        classes = ut.freqTransform(self.classes)
         
         typeFrequencies = haplotypes * classes
         
@@ -108,17 +108,19 @@ class Population():
         sigma = np.tile(self.sigmaDiet,4).reshape(4,2)
         maxi = np.tile(self.maxDiet,4).reshape(4,2)
         
-        survival = typeFrequencies * Viability(x,mu,sigma,maxi)
-        meanViability = np.sum(survival)
+        survival = typeFrequencies * ut.Viability(x,mu,sigma,maxi)
+        totViability = np.sum(survival)
+        
+        freqSelection = survival / totViability
             
-        newFreqClass1 = np.sum(survival,0)[0] / meanViability
+        #newFreqClass1 = np.sum(survival,0)[0] / meanViability
 
-        residentFreq = np.sum(survival[[0,1],:],0) / meanViability
-        mutantFreq = np.sum(survival[[2,3],:],0) / meanViability
+        #residentFreq = np.sum(survival[[0,1],:],0) / meanViability
+        #mutantFreq = np.sum(survival[[2,3],:],0) / meanViability
     
         #newPResident = np.sum(residentFreq ** 2 + residentFreq * mutantFreq) # this is for reroduction i.e. frequencies at the next generation
         
-        return(newPResident, newFreqClass1)
+        return(freqSelection)
     
         
         
@@ -134,58 +136,23 @@ class Population():
             m21 = m * (fmax - f1) / (1 - f1)
             m12 = 0
             
-        haplotypes = np.transpose(np.array(self.haplotypes).reshape(1,4))
+        haplotypes = np.transpose(np.array(self.freqSelection).reshape(1,4))
+        migration = np.empty(haplotypes.shape)
        
-        return [m21,m12]
+        migration[:,0] = haplotypes[:,0]*(1-m12) + haplotypes[:,1]*m21
+        migration[:,1] = haplotypes[:,1]*(1-m21) + haplotypes[:,0]*m12
+
+        freqMigration = migration/np.sum(migration)
+
+        return(freqMigration)
         
         
         
         
         
-
-for j in range(nStrategies):
         
-    xr = xstrat[j]
-    phir = xstrat[j]
-    
-    for k in range(nStrategies):
-            
-        xm = xstrat[k]
-        phim = xstrat[k]
-
-        for i in range(nGen - 1):
-            
-            
-
-            pr = p[i, j, k]
-            rs1 = pr * f1 * (1 - m12) * Viability(xr, mu1, sigma1) + pr * (1 - f1) * m21 * Viability(xr, mu2, sigma2, max2)
-            rs2 = pr * (1 - f1) * (1 - m21) * Viability(xr, mu2, sigma2, max2) + pr * f1 * m12 * Viability(xr, mu1, sigma1)
+    def mating(self):
         
-            ms1 = (1 - pr) * f1 * (1 - m12) * Viability(xm, mu1, sigma1) + (1 - pr) * (1 - f1) * m21 * Viability(xm, mu2, sigma2, max2)
-            ms2 = (1 - pr) * (1 - f1) * (1 - m21) * Viability(xm, mu2, sigma2, max2) + (1 - pr) * f1 * m12 * Viability(xm, mu1, sigma1)
-            
-            meanViability = rs1 + ms1 + rs2 + ms2
-            
-            f1 = (rs1 + ms1) / meanViability
-
-            p[i + 1, j, k] = (rs1 / meanViability) ** 2 + (rs2 / meanViability) ** 2 + ms1 / meanViability * rs1 / meanViability + ms2 / meanViability * rs2 / meanViability
-    
-endTime = time.clock()-startTime
-
-nCheckPoints = 3
-mat = np.empty([nStrategies, nStrategies, nCheckPoints])
-
-plt.figure(1)
-
-for n in range(nCheckPoints):
-    
-    gen = np.linspace(0,nGen,nCheckPoints)[n]
-    mat[:,:,gen] = p[:,:,gen]
-    plt.subplot(nCheckPoints,1,n)
-    plt.contourf(mat[:,:,n]) 
-    
-stDev = np.std(mat,3)
-nonEquilibrium = stDev > 0
 
 
 
