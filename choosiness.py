@@ -9,19 +9,9 @@ Created on Sun Jul 30 13:49:04 2017
 
 from __future__ import division
 import matplotlib.pyplot as plt
-import math
 import numpy as np
 import time
-
-
-def Viability(xVal, muVal, sigmaVal, maxVal = 1):
-    
-    v = maxVal * np.exp(-(xVal - muVal) ** 2 / (2 * sigmaVal ** 2))
-    return v
-
-def ReproductiveSuccess(choosiness):
-    f = - choosiness^2 + choosiness + 3/4 
-    return(f)
+from Utilities import *
     
 r = 1/10 # recombination rate
 t = 100 # number of generations
