@@ -24,7 +24,7 @@ m = 0.1 # upmigration capacity
 fmax = 0.2    
 
 p = np.empty([nGen, nStrategies, nStrategies]) # the population is monomorphic
-p[1,:,:] = 1 # the population is monomorphic at t=0
+p[0,:,:] = 1 # the population is monomorphic at t=0
 f1 = 0.1 # proportion of individuals in class 1 at t=0
 
 #xr = rep(NA,nGen) # strategy of the resident population
@@ -77,17 +77,18 @@ for j in range(nStrategies):
     
 endTime = time.clock()-startTime
 
-#nCheckPoints = 3
-#mat = np.empty([nStrategies, nStrategies, nCheckPoints])
-#
-#plt.figure(1)
-#
-#for n in range(nCheckPoints):
-#    
-#    gen = [1000,10000,100000][n]
-#    mat[:,:,gen] = p[:,:,gen]
-#    plt.subplot(nCheckPoints,1,n)
-#    plt.contourf(mat[:,:,n]) 
-#    
+nCheckPoints = 3
+checkPoints = np.linspace(0,nGen-1,nCheckPoints+1).astype(int)
+
+
+plt.figure(1)
+
+for n in range(nCheckPoints):
+
+    gen = checkPoints[n+1]
+    mat = p[gen,:,:]
+    plt.subplot(nCheckPoints,1,n+1)
+    plt.contourf(mat) 
+    
 #stDev = np.std(mat,3)
 #nonEquilibrium = stDev > 0

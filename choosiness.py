@@ -111,7 +111,7 @@ class Population():
         survival = typeFrequencies * ut.Viability(x,mu,sigma,maxi)
         totViability = np.sum(survival)
         
-        freqSelection = survival / totViability
+        selection = survival / totViability
             
         #newFreqClass1 = np.sum(survival,0)[0] / meanViability
 
@@ -120,7 +120,7 @@ class Population():
     
         #newPResident = np.sum(residentFreq ** 2 + residentFreq * mutantFreq) # this is for reroduction i.e. frequencies at the next generation
         
-        return(freqSelection)
+        return(selection)
     
         
         
@@ -136,15 +136,15 @@ class Population():
             m21 = m * (fmax - f1) / (1 - f1)
             m12 = 0
             
-        haplotypes = np.transpose(np.array(self.freqSelection).reshape(1,4))
+        haplotypes = self.freqSelection
         migration = np.empty(haplotypes.shape)
        
         migration[:,0] = haplotypes[:,0]*(1-m12) + haplotypes[:,1]*m21
         migration[:,1] = haplotypes[:,1]*(1-m21) + haplotypes[:,0]*m12
 
-        freqMigration = migration/np.sum(migration)
+        #freqMigration = migration/np.sum(migration)
 
-        return(freqMigration)
+        return(migration)
         
         
         
@@ -153,6 +153,26 @@ class Population():
         
     def mating(self):
         
+        haplotypes = self.freqMigration
+        r = self.recombinationRate
+        
+        highStratumMales = 1/2 * haplotypes[:,0]
+        lowStratumMales = 1/2 * haplotypes[:,1]
+
+        females = 1/2 * np.sum(haplotypes,1) # haplotype frequencies in the whole female pool
+
+        
+
+        
+        haplotypes[0,:] = (1 - r) * ht[gen-1,0] + r * at[gen-1,0] * at[gen-1,1]
+        haplotypes[1,:] = (1 - r) * ht[gen-1,1] + r * at[gen-1,0] * (1 - at[gen-1,1])
+        haplotypes[2,:] = (1 - r) * ht[gen-1,2] + r * (1 - at[gen-1,0]) * at[gen-1,1]
+        haplotypes[3,:] = (1 - r) * ht[gen-1,3] + r * (1 - at[gen-1,0]) * (1 - at[gen-1,1])
+    
+        at[gen,0] = ht[gen,0] + ht[gen,1]
+        at[gen,1] = ht[gen,0] + ht[gen,2]
+
+        dt[gen,0] = (1 - r) * dt[gen-1,0]
 
 
 
