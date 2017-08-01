@@ -17,7 +17,7 @@ def Viability(xVal, muVal, sigmaVal, maxVal = 1):
     v = maxVal * math.exp(-(xVal - muVal) ** 2 / (2 * sigmaVal ** 2))
     return v
     
-nGen = 100000
+nGen = 10000
 nStrategies = 100
 m = 0.1 # upmigration capacity
 
@@ -77,17 +77,17 @@ for j in range(nStrategies):
     
 endTime = time.clock()-startTime
 
-nCheckPoints = 3
-mat = np.empty([nStrategies, nStrategies, nCheckPoints])
-
-plt.figure(1)
-
-for n in range(nCheckPoints):
-    
-    gen = [1000,10000,100000][n]
-    mat[:,:,gen] = p[:,:,gen]
-    plt.subplot(nCheckPoints,1,n)
-    plt.contourf(mat[:,:,n]) 
-    
-stDev = np.std(mat,3)
-nonEquilibrium = stDev > 0
+#nCheckPoints = 3
+#mat = np.empty([nStrategies, nStrategies, nCheckPoints])
+#
+#plt.figure(1)
+#
+#for n in range(nCheckPoints):
+#    
+#    gen = [1000,10000,100000][n]
+#    mat[:,:,gen] = p[:,:,gen]
+#    plt.subplot(nCheckPoints,1,n)
+#    plt.contourf(mat[:,:,n]) 
+#    
+#stDev = np.std(mat,3)
+#nonEquilibrium = stDev > 0
