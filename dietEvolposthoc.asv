@@ -17,26 +17,50 @@ fileName = fileList(nFiles).name;
 lastGens = load(fileName);
 
 testEqui = squeeze(lastGens.prob(end,:,:));
-figure
+fig1=figure(1);clf;
+set(fig1,'defaulttextinterpreter','latex','Color','w');
+
 contourf(testEqui)
 colormap(summer)
 axis equal
-xlabel('Resident diet strategy')
-ylabel('Mutant diet strategy')
+xlabel('Resident diet strategy $\hat{x}$','fontsize',20)
+ylabel('Mutant diet strategy $x$','fontsize',20)
 hcb = colorbar;
-title(hcb,'p')
+set(hcb,'defaulttextinterpreter','latex');
+title(hcb,'p','fontsize',18)
+export_fig '..\dietEqui.bmp' -m2
 
+[X, Y] = find(testEqui>0);
+nPolyM = numel(X);
+percPolyM = nPolyM/numel(testEqui);
 
-fullDynamic = nan(nGen); % evolution of p for 1 strategy
+fig2 = figure(2);clf;
+set(fig2,'defaulttextinterpreter','latex','Color','w');
+hold on
+
+colorshades = summer(nPolyM);
 
 for file = 1:nFiles
+    
     fileName = fileList(file).name;
     Stmp = load(fileName);
-    pos = strstrip(fileName(5:end-4),'-');
-    start = char2num(pos{1});
-    nd = char2num(pos{2});
-    fullMat(start:nd,:,:) = Stmp.prob;
+    generation = strsplit(fileName(5:end-4),'-');
+    start = str2double(generation{1});
+    nd = str2double(generation{2});
+    
+    for i = 1:nPolyM
+        
+        resident = X(i);
+        mutant = Y(i);
+        
+        evolution = squeeze(Stmp.prob(resident,mutant));
+        plot(start:nd,evolution,'col',colorshades(i,:))
+        
+    end
     clear Stmp
 end
+
+hold off
+
 
 

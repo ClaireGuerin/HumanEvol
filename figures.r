@@ -9,10 +9,11 @@ rm(list = ls())
 #library(grImport) # import vector images into plot
 #library(Hmisc)
 library(jpeg)
+library(latex2exp)
 library(grDevices)
 library(TeachingDemos) # insert a subplot
-library(extrafont)
-loadfonts()
+#library(extrafont)
+#loadfonts()
 
 imgPath = "C:/Users/Claire/Dropbox/MEME/Montpellier/AdaptiveDynamicsStratification/"
 setwd(imgPath)
@@ -45,10 +46,11 @@ rasterImage(socialLadder,2,2,10,10)
 
 strataCols = rgb(c(0,204),c(204,204),c(203,254), maxColorValue = 255)
 
-plot(c(-.5,1),c(0:1), type='n', xlab='Diet requirement X', ylab='Viability', cex.lab = 1.5, cex.axis = 1.5)
+plot(c(-.5,1),c(0:1), type='n', xlab=TeX('Diet requirement $X$'), ylab='', cex.lab = 2, cex.axis = 1.5)
+mtext(TeX('Viability $V_i(X)$'), 2, cex = 2, adj = .5, line = 2)
 lines(vHigh~x, lwd = 3, col = strataCols[1])
 lines(vLow~x, lwd = 3, col = strataCols[2] )
-legend("topleft",legend = c('Upper-class','Lower-class'),lty = c(1,1),lwd = c(3,3), col = strataCols, bty = 'n', seg.len = .5, x.intersp = .5, cex = 1.5)
+legend("topleft",legend = c(TeX('Upper-class'),TeX('Lower-class')),lty = c(1,1),lwd = c(3,3), col = strataCols, bty = 'n', seg.len = .5, x.intersp = .5, cex = 1.5)
 dev.off()
 
 #---- Male mate Choice ----
@@ -62,10 +64,11 @@ dev.off()
 graphics.off() 
 pdf('choosinessFunction.pdf', width=7, height=7)
 
-plot(reproSuccess~x, type = 'l', lwd = 2, col = 'grey', xlab = expression(paste('Male choosiness level ', varphi)), ylab = 'Male reproductive success',asp=1, xlim = c(0,1), ylim = c(0,.6))
+plot(reproSuccess~x, type = 'l', lwd = 2, col = 'grey', xlab = TeX('Male choosiness level $\\phi$'), ylab = '', asp=1, xlim = c(0,1), ylim = c(0,.6), cex.lab = 1.5)
+mtext(TeX('Male reproductive success $W(\\varphi)$'),2, cex = 1.5, adj = .5, line = 2)
 
 subplot(plot(x,mateAccess, type = 'l', col = 'darkred', asp=1, cex.axis=0.5),'topright', size = c(1.8,1.8), type='fig', pars=list(oma=c(0,0,0,0), mar=c(0,0,0,0), tcl=-0.1, mgp=c(0,0,0)))
 
 
-text(0.65,0.55,labels = 'Female pool portion', srt=90, cex =.9)
+text(0.65,0.55,labels = TeX('Female pool portion $P(\\varphi)$'), srt=90, cex =.9)
 dev.off()

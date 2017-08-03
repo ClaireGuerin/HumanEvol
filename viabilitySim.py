@@ -10,7 +10,15 @@ import matplotlib.pyplot as plt
 import math
 import numpy as np
 import time
-import scipy
+import scipy.io as sio
+
+# This is in case some data was lost and you want to restart the simulation from a certain point
+
+dirname = 'C:\Users\Claire\Dropbox\MEME\Montpellier\AdaptiveDynamicsStratification\pData'
+
+lastSave = sio.loadmat('%s\pGen122000-124000.mat' % (dirname))['prob']
+lastGen = 124000
+lastPMat = lastSave[-1,:,:]
 
 
 def Viability(xVal, muVal, sigmaVal, maxVal = 1):
@@ -25,7 +33,7 @@ m = 0.1 # upmigration capacity
 fmax = 0.2    
 
 p = np.empty([nGen, nStrategies, nStrategies]) # the population is monomorphic
-p[0,:,:] = 1 # the population is monomorphic at t=0
+p[lastGen,:,:] = lastPMat # the population is monomorphic at t=0
 f1 = 0.1 # proportion of individuals in class 1 at t=0
 
 #xr = rep(NA,nGen) # strategy of the resident population
@@ -51,7 +59,8 @@ for j in range(nStrategies):
             
         xm = xstrat[k]
 
-        for i in range(nGen - 1):
+        for i in range(lastGen,nGen - 1):
+        #for i in range(nGen - 1):
             
             if (fmax <= f1):
                 
@@ -95,17 +104,15 @@ for n in range(nCheckPoints):
 
 # split data into smaller bits, and save into a single folder
 
-dirname = 'C:\Users\Claire\Dropbox\MEME\Montpellier\AdaptiveDynamicsStratification\pData'
-
-nBits = 100
-bits = np.linspace(0,200000,nBits + 1).astype(int)
+nBits = 100-62
+bits = np.linspace(lastGen,200000,nBits + 1).astype(int)
 
 for i in range(len(bits)):
     
     cutoff = range(bits[i],bits[i+1])
     mat2save = p[cutoff,:,:]
     myDict = {'prob': mat2save}
-    scipy.io.savemat('%s\pGen%s-%s.mat' % (dirname, str(bits[i]), str(bits[i+1])),myDict)
+    sio.savemat('%s\pGen%s-%s.mat' % (dirname, str(bits[i]), str(bits[i+1])),myDict)
     
     
 #fig.savefig('C:\Users\Claire\Dropbox\MEME\Montpellier\AdaptiveDynamicsStratification\diet.png')   # save the figure to file
