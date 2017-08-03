@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import math
 import numpy as np
 import time
+import scipy
 
 
 def Viability(xVal, muVal, sigmaVal, maxVal = 1):
@@ -17,7 +18,7 @@ def Viability(xVal, muVal, sigmaVal, maxVal = 1):
     v = maxVal * math.exp(-(xVal - muVal) ** 2 / (2 * sigmaVal ** 2))
     return v
     
-nGen = 10000
+nGen = 200000
 nStrategies = 100
 m = 0.1 # upmigration capacity
 
@@ -80,15 +81,40 @@ endTime = time.clock()-startTime
 nCheckPoints = 3
 checkPoints = np.linspace(0,nGen-1,nCheckPoints+1).astype(int)
 
-
-plt.figure(1)
+import matplotlib
+matplotlib.use('Agg')
+fig= plt.figure(1)
 
 for n in range(nCheckPoints):
 
     gen = checkPoints[n+1]
     mat = p[gen,:,:]
     plt.subplot(nCheckPoints,1,n+1)
-    plt.contourf(mat) 
+    CP = plt.contourf(mat,cmap=plt.cm.bone)
     
+
+# split data into smaller bits, and save into a single folder
+
+dirname = 'C:\Users\Claire\Dropbox\MEME\Montpellier\AdaptiveDynamicsStratification\pData'
+
+nBits = 100
+bits = np.linspace(0,200000,nBits + 1).astype(int)
+
+for i in range(len(bits)):
+    
+    cutoff = range(bits[i],bits[i+1])
+    mat2save = p[cutoff,:,:]
+    myDict = {'prob': mat2save}
+    scipy.io.savemat('%s\pGen%s-%s.mat' % (dirname, str(bits[i]), str(bits[i+1])),myDict)
+    
+    
+#fig.savefig('C:\Users\Claire\Dropbox\MEME\Montpellier\AdaptiveDynamicsStratification\diet.png')   # save the figure to file
+#plt.close(fig) 
+#    
+#cbar = plt.colorbar(CP)
+#cbar.ax.set_ylabel('p')
+
+
+
 #stDev = np.std(mat,3)
 #nonEquilibrium = stDev > 0

@@ -44,3 +44,11 @@ def freqTransform(frequency):
 
     formattedFrequencies = np.array(frequency).reshape(1,eltSize)
     return(formattedFrequencies)
+    
+    
+    
+    
+    
+def reproduction(males,females):
+    
+    
