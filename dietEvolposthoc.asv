@@ -17,18 +17,15 @@ fileName = fileList(nFiles).name;
 lastGens = load(fileName);
 
 testEqui = squeeze(lastGens.prob(end,:,:));
-fig1=figure(1);clf;
-set(fig1,'defaulttextinterpreter','latex','Color','w');
-
+figure
 contourf(testEqui)
 colormap(summer)
 axis equal
-xlabel('Resident diet strategy $\hat{x}$','fontsize',20)
-ylabel('Mutant diet strategy $x$','fontsize',20)
+xlabel('Resident diet strategy')
+ylabel('Mutant diet strategy')
 hcb = colorbar;
-set(hcb,'defaulttextinterpreter','latex');
-title(hcb,'p','fontsize',18)
-export_fig '..\dietEqui.bmp' -m2
+title(hcb,'p')
+
 
 fullDynamic = nan(nGen); % evolution of p for 1 strategy
 
