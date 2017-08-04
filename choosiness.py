@@ -50,7 +50,7 @@ m = 0.1 # upmigration capacity
 
 fmax = 0.2    
 
-p = np.empty([nGen, nStrategies, nStrategies]) # the population is monomorphic
+p = np.empty([t, nStrategies, nStrategies]) # the population is monomorphic
 p[0,:,:] = 1 # the population is monomorphic at t=0
 f1 = 0.1 # proportion of individuals in class 1 at t=0
 
@@ -74,6 +74,7 @@ class Population():
     where B is adaptation to diet and C is choosiness"""
     
     def __init__(self):
+        
         self.haplotypes = []
         self.recombinationRate
         self.mutationRate
