@@ -162,7 +162,9 @@ class Population():
 
         females = 1/2 * np.sum(haplotypes,1) # haplotype frequencies in the whole female pool
 
+        newHaplotypes = np.empty([4,4]) # haplotypes in 4 categories (classes and sex)
         
+        newHaplotypes[0,:] = g1class
 
         
         haplotypes[0,:] = (1 - r) * ht[gen-1,0] + r * at[gen-1,0] * at[gen-1,1]
