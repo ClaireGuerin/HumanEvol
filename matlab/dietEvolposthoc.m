@@ -26,7 +26,7 @@ YY = linspace(0,1,size(testEqui,1));
 fig1=figure(1);clf;
 set(fig1,'defaulttextinterpreter','latex','Color','w');
 
-contourf(X,Y,testEqui)
+contourf(XX,YY,testEqui)
 colormap(summer)
 axis equal
 xlabel('Resident diet strategy $\hat{x}$','fontsize',20)
@@ -90,3 +90,5 @@ for file = 1:1
 end
 
 hold off
+
+% 1,000 generations seems good
