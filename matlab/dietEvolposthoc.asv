@@ -12,9 +12,7 @@ fileList = dir([PathName,'*.mat']);
 fileName = fileList(1).name;
 S = load(fileName);
 frequencyEvol = S.prob;
-strategyCombs = S.strat;
-
-frequencyEvol(1,:,:)
+strategyCombs = 
 
 % nGen = 200000;
 % nStrat = 100;

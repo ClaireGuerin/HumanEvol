@@ -15,7 +15,7 @@ homeModules = 'C:\\Users\\Claire\\Documents\\GitHub\\HumanEvol\\python'
 sys.path.append(homeModules)
 import UtilitiesViability as ut
 
-dirname = 'C:\Users\Claire\Dropbox\MEME\Montpellier\AdaptiveDynamicsStratification\viabilityRun'
+dirname = 'C:\\Users\\Claire\\Dropbox\\MEME\\Montpellier\\AdaptiveDynamicsStratification\\viabilityRun'
 
 # Import data with polymorphism values
 #pData = sio.loadmat('%s\pGen0-2000.mat' % (dirname))['prob']
@@ -38,17 +38,19 @@ pUpTown = .1
 xstrat = np.linspace(0, 1, NbOfStrategies) # strategies
 allStrat = np.tile(xstrat,NbOfAlleles).reshape(NbOfAlleles,len(xstrat))
 loopOn = list(it.product(*allStrat))
+NbOfCombinations = len(loopOn)
+    
+p = np.empty([NbOfGenerations,NbOfAlleles,NbOfCombinations])
+p[0,:,:] = np.tile(np.vstack((1,np.repeat(0,NbOfAlleles-1))),NbOfCombinations)
 
 startTime = time.clock()
 
-for alleleComb in range(len(loopOn)):
-    
-    p = np.empty([NbOfGenerations,NbOfAlleles])
-    p[0,:] = np.hstack((1,np.repeat(0,NbOfAlleles-1)))
+for alleleComb in range(NbOfCombinations):
+
     
     Xs = np.array(loopOn[alleleComb])
-    comb = Xs.reshape(NbOfAlleles,1)
-    freqMat = np.multiply(comb,pUpTown)
+    probaInit = np.reshape(p[0,:,alleleComb],[NbOfAlleles,1])
+    freqMat = np.multiply(probaInit,[pUpTown,1-pUpTown])
     
     for gen in range(1,NbOfGenerations):
         
@@ -82,12 +84,13 @@ for alleleComb in range(len(loopOn)):
         reproduction = reproduction/np.sum(reproduction)
         
         pPrime = np.sum(reproduction,1)
-        p[gen,:] = pPrime
+        p[gen,:,alleleComb] = pPrime
     
 endTime = time.clock()-startTime
 
 myDict = {'prob': p, 'strat': loopOn}
-sio.savemat('%s\viabEvol.mat' % dirname, myDict)
+sio.savemat('%s\\viabEvol.mat' % dirname, myDict)
+
 
 #nBits = 100-62
 #bits = np.linspace(lastGen,200000,nBits + 1).astype(int)
