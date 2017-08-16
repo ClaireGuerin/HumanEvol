@@ -5,69 +5,11 @@ Created on Sun Jul 30 13:49:04 2017
 @author: Claire
 """
 
-# run in command line: reset -f
-
 from __future__ import division
-import matplotlib.pyplot as plt
 import numpy as np
-import time
+import random as rd
 import Utilities as ut
-    
-r = 1/10 # recombination rate
-t = 100 # number of generations
-
-ht = np.empty([t,4]) # haplotype frequencies over time (4 haplotypes)
-at = np.empty([t,2]) # resident alleles frequencies over time (p and q)
-dt = np.empty([t,1]) # linkage disequilibrium D between X and Phi over time
-
-ht[0,0] = 1/10
-ht[0,1] = 6/10
-ht[0,2] = 1/10
-ht[0,3] = 2/10
-
-at[0,0] = ht[0,0] + ht[0,1]
-at[0,1] = ht[0,0] + ht[0,2]
-
-dt[0,0] = ht[0,0] * ht[0,3] - ht[0,1] * ht[0,2]
-
-for gen in range(1,t):
-    ht[gen,0] = (1 - r) * ht[gen-1,0] + r * at[gen-1,0] * at[gen-1,1]
-    ht[gen,1] = (1 - r) * ht[gen-1,1] + r * at[gen-1,0] * (1 - at[gen-1,1])
-    ht[gen,2] = (1 - r) * ht[gen-1,2] + r * (1 - at[gen-1,0]) * at[gen-1,1]
-    ht[gen,3] = (1 - r) * ht[gen-1,3] + r * (1 - at[gen-1,0]) * (1 - at[gen-1,1])
-    
-    at[gen,0] = ht[gen,0] + ht[gen,1]
-    at[gen,1] = ht[gen,0] + ht[gen,2]
-
-    dt[gen,0] = (1 - r) * dt[gen-1,0]
-
-plt.plot(ht) 
-plt.plot(at)
-plt.plot(dt)
-    
-nStrategies = 100
-m = 0.1 # upmigration capacity
-
-fmax = 0.2    
-
-p = np.empty([t, nStrategies, nStrategies]) # the population is monomorphic
-p[0,:,:] = 1 # the population is monomorphic at t=0
-f1 = 0.1 # proportion of individuals in class 1 at t=0
-
-#xr = rep(NA,nGen) # strategy of the resident population
-#xr[1] = 1 # strategy of the resident population at t=0
-xstrat = np.linspace(0, 1, nStrategies) # strategies
-
-# class 1 viability
-mu1 = 0.5
-sigma1 = 0.1
-
-# class 2 viability
-mu2 = 0.3
-sigma2 = 0.2
-max2 = 0.8
-
-startTime = time.clock()
+from Parameters import * 
 
 class Population():
     """ g1 = f(BC), g2 = f(Bc), g3 = f(bC), g4 = f(bc) 
@@ -75,29 +17,27 @@ class Population():
     
     def __init__(self):
         
-        self.r # recombination rate
-        self.mutationRate
-        self.mutationStep
+        self.r = 0 # recombination rate
         
-        self.pUpTown = .1 # starting frequency of uptown population
-        self.sexRatio = .5
-        self.probaB = 1
-        self.probaC = 1
-        self.probad0 = .5
-        self.probaa0 = .5
+        self.s = survivalRate
+        self.e = encounterRate
+        self.latency = [latencyMale,latencyFemale]
 
         self.dietResidentMutant = []
         self.phiResidentMutant = []
+
+        self.Hattractive = 0 # heritability trait A
+        self.Hdominant = 0 # heritability trait D
         
-        self.muDiet = [] # mu class 1, mu class 2
-        self.sigmaDiet = [] # sigma class 1, sigma class 2
-        self.maxDiet = [] # max survival class 1, max survival class 2
+        self.socialMigration = [0,migrationParamLow,migrationParamHigh] # m0, m, m'
+        self.hypergyny = [0,migrationParamLow,migrationParamHigh] # h0, h, h'
         
-        self.s = 0
-        self.e = 0
-        
-        self.socialMigration = [] # m0, m, m'
-        self.hypergyny = [] # h0, h, h'
+        self.b = 0 # fertility advantage for a1 females
+
+        self.probaB = probaB
+        self.probaC = probaC
+        self.probad0 = probad0
+        self.probaa0 = probaa0
 
         dummyCol = np.repeat(.25,8)*self.sexRatio
         colMat = np.hstack((dummyCol*self.pUpTown,dummyCol*(1-self.pUpTown)))
@@ -122,17 +62,19 @@ class Population():
         mutSurv = np.vstack((np.resize(survival[1,0],[2,8]),np.resize(survival[1,1],[2,8])))
         
         survival = np.multiply(matrix,np.hstack((resSurv,mutSurv)))
-        selMat = survival / np.sum(survival)
+        self.selMat = survival / np.sum(survival)
         
-        return selMat
+        return self.selMat
         
 
 
 
         
         
-    def socialMigration(self, matrix):
+    def socialMigration(self):
         # matrix here should be selMat
+        
+        matrix = self.selMat
         
         ms = self.socialMigration
         m0 = ms[0]
@@ -157,49 +99,15 @@ class Population():
         matrix[:,(6,7)] = matrix[:,(6,7)] + Ha1 * matrix[:,(14,15)]
         matrix[:,(6,7)] = (1 - Ha1) * matrix[:,(14,15)]
         
-        migMat = matrix/np.sum(matrix)
+        self.migMat = matrix/np.sum(matrix)
 
-        return migMat
+        return self.migMat
         
         
         
         
         
-#        
-#    def mating(self):
-#        
-#        haplotypes = self.freqMigration
-#        r = self.recombinationRate
-#        
-#        highStratumMales = 1/2 * haplotypes[:,0]
-#        lowStratumMales = 1/2 * haplotypes[:,1]
-#
-#        females = 1/2 * np.sum(haplotypes,1) # haplotype frequencies in the whole female pool
-#
-#        newHaplotypes = np.empty([4,4]) # haplotypes in 4 categories (classes and sex)
-#        
-#        newHaplotypes[0,:] = g1class
-#
-#        
-#        haplotypes[0,:] = (1 - r) * ht[gen-1,0] + r * at[gen-1,0] * at[gen-1,1]
-#        haplotypes[1,:] = (1 - r) * ht[gen-1,1] + r * at[gen-1,0] * (1 - at[gen-1,1])
-#        haplotypes[2,:] = (1 - r) * ht[gen-1,2] + r * (1 - at[gen-1,0]) * at[gen-1,1]
-#        haplotypes[3,:] = (1 - r) * ht[gen-1,3] + r * (1 - at[gen-1,0]) * (1 - at[gen-1,1])
-#    
-#        at[gen,0] = ht[gen,0] + ht[gen,1]
-#        at[gen,1] = ht[gen,0] + ht[gen,2]
-#
-#        dt[gen,0] = (1 - r) * dt[gen-1,0]
-
-    upclass = self.allprobs[:,range(8)]
-    loclass = self.allprobs[:,range(8,16)]
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+            
                             
     def available(self,matrix,PhiS):
         
@@ -218,20 +126,22 @@ class Population():
         alpha_a0 = 1/(1 + s*e*alpha_res*(1 - phip)*lf/(1 - s*lf))
         alpha_mut = 1/(1 + s*e*lm*(pa1*alpha_a1 + (1 - pa1)*alpha_a0*(1 - phi))/(1-s*lm))
         
-        availabilities = np.array([alpha_res,alpha_mut,alpha_a0,alpha_a1])
-        return availabilities
+        self.availabilities = np.array([alpha_res,alpha_mut,alpha_a0,alpha_a1])
+        return self.availabilities
         
         
         
         
                             
         
-    def phenoRep(self,matrix, availability,phi):
+    def phenoRep(self,matrix,phiVal):
         #here, matrix is the submatrix for one class, one allele of choosiness with associated phi value, i.e. 2 rows of genotypes
+        
+        availability = self.availabilities
         
         b = self.b
         
-        a0 = availability[2]*(1-phi)
+        a0 = availability[2]*(1-phiVal)
         a1 = availability[3]*(1+b) # b is the benefit obtained from mating with an attractive female
         
         phenoRep = np.vstack((np.multiply(matrix[:,0],matrix[:,4]*a0), 
@@ -254,6 +164,10 @@ class Population():
         
                             
     def matingPhenotype(self,matrix):
+        # matrix here is the matrix for one social class only
+        
+        phip = self.phiResidentMutant[0]
+        phi = self.phiResidentMutant[1]
         
         hi = self.Hattractive * self.Hdominant
         ha = self.Hattractive * (1-self.Hdominant)
@@ -267,12 +181,14 @@ class Population():
         
         herit = np.transpose(np.vstack((heritp1,heritp2,heritp3,heritp4)))
         
-        phenRep = self.phenoRep(matrix)
+        phenRep = np.empty([10,4])
+        phenRep[:,(0,2)] = self.phenoRep(matrix[(0,2),:],phip)
+        phenRep[:,(1,3)] = self.phenoRep(matrix[(1,3),:],phi)
         
         phenNew = np.empty([4,4])
         
         for phen in range(4):
-            phenNew[phen,] = np.multiply(phenRep,herit[phen])
+            phenNew[phen,] = np.sum(np.multiply(phenRep,herit[phen,:]),0)
             
         return phenNew
 
@@ -282,7 +198,7 @@ class Population():
         
         
         
-    def matingGenotype(self,matrix,LD):
+    def matingGenotype(self,matrix):
         #matrix here is the matrix for 1 social class only
         
         phip = self.phiResidentMutant[0]
@@ -290,12 +206,15 @@ class Population():
 
         s = self.s
         e = self.e
-
-        availability = self.available(self,phip,phi)
-        phenMat = self.matingPhenotype(matrix)
         
-        matFemales = .5*phenMat
-        matMales = .5*phenMat
+        r = self.r
+
+        availability = self.available(self,matrix,[phip,phi])
+        # [res, mut, a0, a1]
+        phenGenMat = self.matingPhenotype(matrix)
+        
+        matFemales = .5*phenGenMat
+        matMales = .5*phenGenMat
         
         sevec = np.repeat(s*e,4)
         alphavec = np.resize([availability[0],availability[1]],4)
@@ -315,17 +234,20 @@ class Population():
         matNew = np.hstack((genNew,genNew))
         matNew = matNew/np.sum(matNew)
         
-        LDNew = (1-r)*LD
-        
-        return matNew, LDNew        
+        return matNew     
         
     
+    def linkageDisequilibrium(self):
+                
+        self.LD = (1-self.r)*self.LD
         
         
         
         
+    def downRegulation(self):
         
-    def downRegulation(self, repmatrix, selmatrix):
+        repmatrix = self.repMat
+        selmatrix = self.selMat
         
         c2Sel = selmatrix[:,range(8,12)]
                           
@@ -335,6 +257,6 @@ class Population():
         repmatrix[:,range(4)] = repmatrix[:,range(4)] - c2Sel * (MupTot + HypTot)
         repmatrix[:,range(8,12)] = repmatrix[:,range(8,12)] + c2Sel * (MupTot + HypTot)
                
-        regMat = repmatrix/np.sum(repmatrix)
+        self.regMat = repmatrix/np.sum(repmatrix)
         
-        return regMat
+        return self.regMat
