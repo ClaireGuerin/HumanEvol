@@ -198,8 +198,10 @@ class Population():
         
         
         
-    def matingGenotype(self,matrix):
+    def matingGenotype(self,submatrix):
         #matrix here is the matrix for 1 social class only
+        classFreq = np.sum(submatrix)
+        matrix = submatrix/classFreq
         
         phip = self.phiResidentMutant[0]
         phi = self.phiResidentMutant[1]
@@ -232,9 +234,9 @@ class Population():
         
         genNew = 0.5*np.vstack((g1prime,g2prime,g3prime,g4prime))
         matNew = np.hstack((genNew,genNew))
-        matNew = matNew/np.sum(matNew)
+        matNew = classFreq * matNew/np.sum(matNew)
         
-        return matNew     
+        return matNew    
         
     
     def linkageDisequilibrium(self):

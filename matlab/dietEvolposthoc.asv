@@ -12,8 +12,43 @@ fileList = dir([PathName,'*.mat']);
 fileName = fileList(1).name;
 S = load(fileName);
 frequencyEvol = S.prob;
-strategyCombs = 
+strategyCombs = S.strat;
 
+lastGen = squeeze(frequencyEvol(end,:,:));
+
+XX = sort(unique(strategyCombs(:,1)));
+
+matPlot = nan(100,100);
+
+for ncomb = 1:size(strategyCombs,1)
+    posRes = find(XX == strategyCombs(ncomb,1));
+    posMut = find(XX == strategyCombs(ncomb,2));
+    matPlot(posMut,posRes) = lastGen(1,ncomb);
+end
+
+numel(find(isnan(matPlot)))
+numel(find(isnan(frequencyEvol(:,1:))))
+%%
+fig1=figure(1);clf;
+set(fig1,'defaulttextinterpreter','latex','Color','w');
+
+contourf(XX,XX,matPlot)
+colormap(summer)
+axis equal
+xlabel('Resident diet strategy $\hat{x}$','fontsize',20)
+ylabel('Mutant diet strategy $x$','fontsize',20)
+caxis([0,1])
+hcb = colorbar;
+set(hcb,'defaulttextinterpreter','latex');
+title(hcb,'p','fontsize',18)
+%%
+numel(find(round(lastGen(1,:),10)<1))
+
+YY = 1:size(frequencyEvol,1);
+for i = 1:size(frequencyEvol,3)
+    plot(YY,frequencyEvol(:,2,i))
+    hold on
+end
 % nGen = 200000;
 % nStrat = 100;
 % 

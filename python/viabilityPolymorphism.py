@@ -27,12 +27,12 @@ NbOfStrategies = 100
 NbOfAlleles = 2
 
 # viability class param
-Mus = [.5,.3] # up / down
-Sigmas = [.1,.8] # up / down
-Maxis = [1,.8] # up / down
+Mus = [0.5,0.3] # up / down
+Sigmas = [0.1,0.2] # up / down
+Maxis = [1.0,0.8] # up / down
 
-migUp = .2  
-pUpTown = .1  
+migUp = 0.2  
+pUpTown = 0.1  
        
 
 xstrat = np.linspace(0, 1, NbOfStrategies) # strategies
@@ -41,7 +41,8 @@ loopOn = list(it.product(*allStrat))
 NbOfCombinations = len(loopOn)
     
 p = np.empty([NbOfGenerations,NbOfAlleles,NbOfCombinations])
-p[0,:,:] = np.tile(np.vstack((1,np.repeat(0,NbOfAlleles-1))),NbOfCombinations)
+startMono = 0.98
+p[0,:,:] = np.tile(np.vstack((startMono,np.repeat(1-startMono,NbOfAlleles-1))),NbOfCombinations)
 
 startTime = time.clock()
 
@@ -82,6 +83,7 @@ for alleleComb in range(NbOfCombinations):
         reproduction[:,0] = reproduction[:,0] - survival[:,1] * migUp
         reproduction[:,1] = reproduction[:,1] + survival[:,1] * migUp
         reproduction = reproduction/np.sum(reproduction)
+        freqMat = reproduction
         
         pPrime = np.sum(reproduction,1)
         p[gen,:,alleleComb] = pPrime
@@ -91,6 +93,11 @@ endTime = time.clock()-startTime
 myDict = {'prob': p, 'strat': loopOn}
 sio.savemat('%s\\viabEvol.mat' % dirname, myDict)
 
+#import operator
+#getX = operator.itemgetter(0)
+#xMut = list(map(getX, loopOn))
+#xMut > 0.5
+#xMut < 0.5
 
 #nBits = 100-62
 #bits = np.linspace(lastGen,200000,nBits + 1).astype(int)

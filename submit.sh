@@ -5,8 +5,8 @@
 #SBATCH -N 1 		
 #SBATCH -c 32 		
 #SBATCH -t 4-00:00 	
-#SBATCH -p general 	
-#SBATCH --mem=32000	
+#SBATCH -p bigmem 	
+#SBATCH --mem=124505000
 #SBATCH --mail-type=END
 #SBATCH --mail-user=guerin.claire01@gmail.com
 
