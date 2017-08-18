@@ -5,15 +5,18 @@
 #SBATCH -N 1 		
 #SBATCH -c 32 		
 #SBATCH -t 4-00:00 	
-#SBATCH -p bigmem 	
-#SBATCH --mem=124505000
+#SBATCH -p serial_requeue	
+#SBATCH --mem=32000
 #SBATCH --mail-type=END
 #SBATCH --mail-user=guerin.claire01@gmail.com
 
-mkdir -p /scratch/$USER/$SLURM_JOB_ID
-
 source new-modules.sh
 module load python/2.7.6-fasrc01
-srun -c 32 python runsim.py
-
-rm -rf /scratch/$USER/$SLURM_JOB_ID
+	
+while IFS='' read -r line || [[ -n $line ]]; do
+    #echo $line
+	mkdir -p /scratch/$USER/$SLURM_JOB_ID
+	srun -c 32 python -u runsim.py $line
+	sleep 1 # pause to be kind to the scheduler
+	rm -rf /scratch/$USER/$SLURM_JOB_ID
+done < "$1"

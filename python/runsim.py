@@ -8,7 +8,7 @@ import itertools as it
 import numpy as np
 import random as rd
 import scipy.io as sio
-homeModules = '/n/home06/cguerin/src/humanevol'
+homeModules = '/n/home06/cguerin/src/humanevol/'
 sys.path.append(homeModules)
 from Parameters import *
 import Utilities as ut
@@ -17,15 +17,21 @@ from Population import *
 
 dirname = '/n/regal/debivort_lab/claire/humanevol'
 
-t = 100 # number of generations
+t = 200000 # number of generations
 
 #p = np.empty([t, NbOfStrategies, NbOfStrategies])
 #q = np.empty([t, NbOfStrategies, NbOfStrategies])
 p = 1
 q = 1 # the population is monomorphic at t=0
 
-residentDiets = np.linspace(0,1,NbOfStrategies)
-residentPhis = np.linspace(0,1,NbOfStrategies)
+#residentDiets = np.linspace(0,1,NbOfStrategies)
+#residentPhis = np.linspace(0,1,NbOfStrategies)
+
+args = sys.argv
+argsList = args[1].split(',')
+argsFloat = map(float,argsList)
+
+#argsFloat = [0.5,0.5]
 
 recombinationRate = [.5,.75,1] # no recomb, some recomb, full recomb
 
@@ -37,23 +43,24 @@ heritA = [.25,.5,.75] # heritability of trait A
 
 m0 = [.1,.5]         
 h0 = [.1,.5]
-seeding = list(range(NbOfStrategies))
+seeding = list(range(10))
 
-allParams = [seeding,recombinationRate,list(residentDiets),list(residentPhis),heritA,heritD,m0,h0,fertilityBenef]
+allParams = [seeding,recombinationRate,heritA,heritD,m0,h0,fertilityBenef]
 allParamCombinations = list(it.product(*allParams))
+
 
 def runEvolution(parcomb):
     
-    parcomb = int(parcomb)
-    seedingInst = allParams[parcomb,0]
-    recombRInst = allParams[parcomb,1]
-    resDietInst = allParams[parcomb,2]
-    resPhiInst = allParams[parcomb,3]
-    heritAInst = allParams[parcomb,4]
-    heritDInst = allParams[parcomb,5]
-    m0Inst = allParams[parcomb,6]
-    h0Inst = allParams[parcomb,7]
-    bInst = allParams[parcomb,8]
+    #parcomb = int(parcomb)
+    seedingInst = parcomb[0]
+    recombRInst = parcomb[1]
+    resDietInst = argsFloat[0]
+    resPhiInst = argsFloat[0]
+    heritAInst = parcomb[2]
+    heritDInst = parcomb[3]
+    m0Inst = parcomb[4]
+    h0Inst = parcomb[5]
+    bInst = parcomb[6]
 
     rd.seed(seedingInst)
     
@@ -66,7 +73,7 @@ def runEvolution(parcomb):
     popEvolve.phiResidentMutant = [resPhiInst,resPhiInst]
     popEvolve.Hattractive = heritAInst
     popEvolve.Hdominant = heritDInst
-    popEvolve.socialMigration[0] = m0Inst
+    popEvolve.socMigration[0] = m0Inst
     popEvolve.hypergyny[0] = h0Inst
     popEvolve.b = bInst
 
@@ -102,7 +109,7 @@ def runEvolution(parcomb):
 
 if __name__ == '__main__':
     # start 4 worker processes
-    with closing(Pool(processes=32)) as pool:
+    with closing(Pool(processes=2)) as pool:
 
         pool.map(runEvolution, allParamCombinations)      
         pool.terminate

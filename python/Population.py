@@ -23,13 +23,20 @@ class Population():
         self.e = encounterRate
         self.latency = [latencyMale,latencyFemale]
 
+        self.sexRatio = sexRatio
+        self.pUpTown = pUpTown
+        
+        self.muDiet = muDiet 
+        self.sigmaDiet = sigmaDiet
+        self.maxDiet = maxDiet
+
         self.dietResidentMutant = []
         self.phiResidentMutant = []
 
         self.Hattractive = 0 # heritability trait A
         self.Hdominant = 0 # heritability trait D
         
-        self.socialMigration = [0,migrationParamLow,migrationParamHigh] # m0, m, m'
+        self.socMigration = [0,migrationParamLow,migrationParamHigh] # m0, m, m'
         self.hypergyny = [0,migrationParamLow,migrationParamHigh] # h0, h, h'
         
         self.b = 0 # fertility advantage for a1 females
@@ -41,7 +48,7 @@ class Population():
 
         dummyCol = np.repeat(.25,8)*self.sexRatio
         colMat = np.hstack((dummyCol*self.pUpTown,dummyCol*(1-self.pUpTown)))
-        rowMat = np.transpose([1,0,0,0])
+        rowMat = np.array([1,0,0,0]).reshape(4,1)
         self.startMatrix = np.multiply(rowMat,colMat) 
         # all genotypes & phenotypes/sex/social class
         
@@ -76,7 +83,7 @@ class Population():
         
         matrix = self.selMat
         
-        ms = self.socialMigration
+        ms = self.socMigration
         m0 = ms[0]
         m = ms[1]
         mPrime = ms[2]
@@ -211,7 +218,7 @@ class Population():
         
         r = self.r
 
-        availability = self.available(self,matrix,[phip,phi])
+        availability = self.available(matrix,[phip,phi])
         # [res, mut, a0, a1]
         phenGenMat = self.matingPhenotype(matrix)
         
@@ -253,7 +260,7 @@ class Population():
         
         c2Sel = selmatrix[:,range(8,12)]
                           
-        MupTot = self.socialMigration[0]*(1+self.socialMigration[2]/self.socialMigration[1])
+        MupTot = self.socMigration[0]*(1+self.socMigration[2]/self.socMigration[1])
         HypTot = self.hypergyny[0]*(1+self.hypergyny[2]/self.hypergyny[1])
         
         repmatrix[:,range(4)] = repmatrix[:,range(4)] - c2Sel * (MupTot + HypTot)

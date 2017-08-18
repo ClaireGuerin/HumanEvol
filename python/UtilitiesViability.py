@@ -31,3 +31,10 @@ def ReproTriAllelic(freq):
     freqPrime = np.vstack((p1Prime,p2Prime,p3Prime))*np.sum(freq,0)
     
     return freqPrime    
+    
+def testExtinction(matrix):
+    if not np.count_nonzero(matrix):
+        matrix = matrix
+    else:
+        matrix = matrix/np.sum(matrix)
+    return matrix

@@ -15,7 +15,7 @@ library(TeachingDemos) # insert a subplot
 #library(extrafont)
 #loadfonts()
 
-imgPath = "C:/Users/Claire/Dropbox/MEME/Montpellier/AdaptiveDynamicsStratification/"
+imgPath = "C:/Users/Claire/Dropbox/MEME/Montpellier/Figures/"
 setwd(imgPath)
 
 #---- Stratified society ----
@@ -25,7 +25,7 @@ viability = function(xVal, muVal, sigmaVal, maxVal = 1) {
   return(v)
 }
 
-muV = c(.2,.5)
+muV = c(.3,.8)
 sigmaV = c(.2,.1)
 
 x = seq(-1,1,length.out = 10000)

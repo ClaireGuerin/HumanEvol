@@ -21,16 +21,5 @@ probaC = 1 # initial frequency of Resident allele for choosiness
 probad0 = .5 # initial frequency of less socially dominant individuals
 probaa0 = .5 # initial frequency of less attractive individuals
 
-# class 1 viability
-mu1 = 0.5
-sigma1 = 0.1
-max1 = 1
-# class 2 viability
-mu2 = 0.3
-sigma2 = 0.2
-max2 = 0.8
-
 migrationParamLow = 1
 migrationParamHigh = 1.1
-
-pUpTown = .1 # starting frequency of uptown population

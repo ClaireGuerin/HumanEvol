@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 """
 Claire Guerin - 31/07/2017
 """
@@ -22,7 +22,7 @@ dirname = 'C:\\Users\\Claire\\Dropbox\\MEME\\Montpellier\\AdaptiveDynamicsStrati
 #startingMat = pData[-1,:,:]
 
 # PARAMETERS 
-NbOfGenerations = 1000
+NbOfGenerations = 2000
 NbOfStrategies = 100  
 NbOfAlleles = 2
 
@@ -34,6 +34,7 @@ Maxis = [1.0,0.8] # up / down
 migUp = 0.2  
 pUpTown = 0.1  
        
+fmax = 0.2
 
 xstrat = np.linspace(0, 1, NbOfStrategies) # strategies
 allStrat = np.tile(xstrat,NbOfAlleles).reshape(NbOfAlleles,len(xstrat))
@@ -41,7 +42,7 @@ loopOn = list(it.product(*allStrat))
 NbOfCombinations = len(loopOn)
     
 p = np.empty([NbOfGenerations,NbOfAlleles,NbOfCombinations])
-startMono = 0.98
+startMono = 0.99
 p[0,:,:] = np.tile(np.vstack((startMono,np.repeat(1-startMono,NbOfAlleles-1))),NbOfCombinations)
 
 startTime = time.clock()
@@ -66,9 +67,17 @@ for alleleComb in range(NbOfCombinations):
         survival = survival / np.sum(survival)        
                 
         # 2: MIGRATION
+        f1 = np.sum(survival,0)[0]
+        if (fmax <= f1):
+            m21 = 0 # proportion of C2 that upmigrate
+            m12 = f1 - fmax # proportion of C1 that downmigrate
+        else:
+            m21 = migUp * (fmax - f1) / (1 - f1)
+            m12 = 0
+                
         migration = survival
-        migration[:,0] = migration[:,0] + migUp * migration[:,1]
-        migration[:,1] = (1 - migUp) * migration[:,1]
+        migration[:,0] = migration[:,0]*(1-m12) + migration[:,1]*m21
+        migration[:,1] = migration[:,1]*(1-m21) + migration[:,0]*m12
         migration = migration/np.sum(migration)
         
         # 3: REPRODUCTION 
@@ -78,20 +87,13 @@ for alleleComb in range(NbOfCombinations):
         else:
             reproduction = ut.ReprodBiAllelic(migration)
         
-        # 4: REGULATION
-        
-        reproduction[:,0] = reproduction[:,0] - survival[:,1] * migUp
-        reproduction[:,1] = reproduction[:,1] + survival[:,1] * migUp
-        reproduction = reproduction/np.sum(reproduction)
-        freqMat = reproduction
-        
         pPrime = np.sum(reproduction,1)
         p[gen,:,alleleComb] = pPrime
     
 endTime = time.clock()-startTime
 
 myDict = {'prob': p, 'strat': loopOn}
-sio.savemat('%s\\viabEvolnan%sgen.mat' % (dirname, str(NbOfGenerations)), myDict)
+sio.savemat('%s\\viabmigfmax%sgen.mat' % (dirname, str(NbOfGenerations)), myDict)
 
 #import operator
 #getX = operator.itemgetter(0)
@@ -108,3 +110,9 @@ sio.savemat('%s\\viabEvolnan%sgen.mat' % (dirname, str(NbOfGenerations)), myDict
 #    mat2save = p[cutoff,:,:]
 #    myDict = {'prob': mat2save}
 #    sio.savemat('%s\pGen%s-%s.mat' % (dirname, str(bits[i]), str(bits[i+1])),myDict)
+           
+
+
+
+
+

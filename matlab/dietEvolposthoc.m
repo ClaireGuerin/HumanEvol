@@ -27,7 +27,22 @@ for ncomb = 1:size(strategyCombs,1)
 end
 
 numel(find(isnan(matPlot)))
-numel(find(isnan(frequencyEvol(end,1,:))))
+ngen = size(frequencyEvol,1);
+
+nanVec = nan(1,ngen);
+for i = 1:ngen
+    nanVec(1,i) = numel(find(isnan(frequencyEvol(i,1,:))));
+end
+
+fig1=figure(1);clf;
+set(fig1,'defaulttextinterpreter','latex','Color','w');
+
+plot(1:ngen,nanVec, 'Color', [1/3,1/3,1/3], 'LineWidth',2)
+xlabel('Generations','fontsize',20)
+ylabel('Number of NaNs generated','fontsize',20)
+%%
+export_fig '..\..\Figures\nanincrease.bmp' -m2
+
 %%
 fig1=figure(1);clf;
 set(fig1,'defaulttextinterpreter','latex','Color','w');
@@ -42,11 +57,13 @@ hcb = colorbar;
 set(hcb,'defaulttextinterpreter','latex');
 title(hcb,'p','fontsize',18)
 %%
+export_fig '..\..\Figures\dietpipgen1000.bmp' -m2
+%%
 numel(find(round(lastGen(1,:),10)<1))
 
 YY = 1:size(frequencyEvol,1);
 for i = 1:size(frequencyEvol,3)
-    plot(YY,frequencyEvol(:,2,i))
+    plot(YY,frequencyEvol(:,1,i))
     hold on
 end
 % nGen = 200000;

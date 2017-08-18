@@ -35,7 +35,7 @@ def freqTransform(frequency):
     return formattedFrequencies
     
     
-def genMutation(self,geneticTrait):
+def genMutation(geneticTrait):
     # genetic trait is either dietResMut or phiResMut
     
     if rd.uniform(0,1) < 0.5:
@@ -69,3 +69,11 @@ def updateTrait(trait):
         trait = trait
         
     return trait
+    
+    
+def testExtinction(matrix):
+    if not np.count_nonzero(matrix):
+        matrix = matrix
+    else:
+        matrix = matrix/np.sum(matrix)
+    return matrix
