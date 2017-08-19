@@ -90,9 +90,11 @@ def runEvolution(parcomb):
         
         # REPRODUCTION
         upperclass = popEvolve.migMat[:,range(8)]
+        upperclassNorm = upperclass/np.sum(upperclass,0)
         lowerclass = popEvolve.migMat[:,range(8,16)]
-        RepUpperClass = pUpTown*popEvolve.matingGenotype(upperclass)
-        RepLowerClass = (1-pUpTown)*popEvolve.matingGenotype(lowerclass)
+        lowerclassNorm = lowerclass/np.sum(lowerclass,0)
+        RepUpperClass = pUpTown*popEvolve.matingGenotype(upperclassNorm)
+        RepLowerClass = (1-pUpTown)*popEvolve.matingGenotype(lowerclassNorm)
         allFrequencies = np.hstack((RepUpperClass,RepLowerClass))
         popEvolve.repMat = allFrequencies/np.sum(allFrequencies)
         

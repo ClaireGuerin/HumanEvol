@@ -128,7 +128,7 @@ class Population():
         phi = PhiS[1]
         pa1 = np.sum(matrix[:,range(6,8)])/np.sum(matrix[:,range(4,8)]) 
         
-        alpha_res = np.sqrt(phip) # to replace with mathematica solution for dr
+        alpha_res = 1/(1+(s*e*phip*lm)/(1-s*lm)) # to replace with mathematica solution for dr
         alpha_a1 = 1/(1 + (s*e*alpha_res*lf)/(1 - s*lf))
         alpha_a0 = 1/(1 + s*e*alpha_res*(1 - phip)*lf/(1 - s*lf))
         alpha_mut = 1/(1 + s*e*lm*(pa1*alpha_a1 + (1 - pa1)*alpha_a0*(1 - phi))/(1-s*lm))
